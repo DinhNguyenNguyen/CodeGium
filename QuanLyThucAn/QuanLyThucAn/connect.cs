@@ -183,12 +183,12 @@ namespace QuanLyThucAn
         }
 
         //check cùng tên trong bảg
-        public static bool checkName(string query, TextEdit textEdit, string column)
+        public  bool checkName(string query, TextEdit textEdit, string column)
         {
             bool checkName = false;
-            connection con = new connection();
+            //connection con = new connection();
             DataTable dt = new DataTable();
-            dt = con.readData(query);
+            dt = readData(query);
             if (dt != null)
             {
                 foreach (DataRow dr in dt.Rows)
