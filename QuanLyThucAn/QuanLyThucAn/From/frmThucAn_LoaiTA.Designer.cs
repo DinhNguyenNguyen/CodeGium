@@ -42,6 +42,8 @@
             this.gvLoaiThucAn = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtTenLoai = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaLoai = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnLamMoi = new DevExpress.XtraEditors.SimpleButton();
@@ -49,21 +51,19 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtGiaTA = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenTA = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtMaTA = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMaLoai = new DevExpress.XtraEditors.TextEdit();
-            this.txtTenLoai = new DevExpress.XtraEditors.TextEdit();
-            this.txtMaTA = new DevExpress.XtraEditors.TextEdit();
-            this.txtTenTA = new DevExpress.XtraEditors.TextEdit();
-            this.txtGiaTA = new DevExpress.XtraEditors.TextEdit();
             this.lukLoaiTA = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtURL = new DevExpress.XtraEditors.ButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcThucAn)).BeginInit();
@@ -75,13 +75,13 @@
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenLoai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenLoai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaTA.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenTA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaTA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenTA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaTA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lukLoaiTA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtURL.Properties)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +173,20 @@
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Loại thức ăn";
             // 
+            // txtTenLoai
+            // 
+            this.txtTenLoai.Location = new System.Drawing.Point(105, 89);
+            this.txtTenLoai.Name = "txtTenLoai";
+            this.txtTenLoai.Size = new System.Drawing.Size(237, 24);
+            this.txtTenLoai.TabIndex = 3;
+            // 
+            // txtMaLoai
+            // 
+            this.txtMaLoai.Location = new System.Drawing.Point(105, 51);
+            this.txtMaLoai.Name = "txtMaLoai";
+            this.txtMaLoai.Size = new System.Drawing.Size(237, 24);
+            this.txtMaLoai.TabIndex = 3;
+            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(24, 92);
@@ -196,6 +210,7 @@
             this.btnLamMoi.Size = new System.Drawing.Size(75, 30);
             this.btnLamMoi.TabIndex = 0;
             this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -204,6 +219,7 @@
             this.btnXoa.Size = new System.Drawing.Size(75, 30);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xoá";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -212,6 +228,7 @@
             this.btnSua.Size = new System.Drawing.Size(75, 30);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -220,6 +237,7 @@
             this.btnThem.Size = new System.Drawing.Size(75, 30);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupControl2
             // 
@@ -246,6 +264,36 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Thức Ăn";
             // 
+            // txtGiaTA
+            // 
+            this.txtGiaTA.Location = new System.Drawing.Point(129, 172);
+            this.txtGiaTA.Name = "txtGiaTA";
+            this.txtGiaTA.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtGiaTA.Size = new System.Drawing.Size(237, 24);
+            this.txtGiaTA.TabIndex = 3;
+            // 
+            // txtTenTA
+            // 
+            this.txtTenTA.Location = new System.Drawing.Point(129, 89);
+            this.txtTenTA.Name = "txtTenTA";
+            this.txtTenTA.Size = new System.Drawing.Size(237, 24);
+            this.txtTenTA.TabIndex = 3;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(37, 49);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(73, 17);
+            this.labelControl3.TabIndex = 1;
+            this.labelControl3.Text = "Mã thức ăn";
+            // 
+            // txtMaTA
+            // 
+            this.txtMaTA.Location = new System.Drawing.Point(129, 51);
+            this.txtMaTA.Name = "txtMaTA";
+            this.txtMaTA.Size = new System.Drawing.Size(237, 24);
+            this.txtMaTA.TabIndex = 3;
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(484, 124);
@@ -253,6 +301,38 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 30);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Thêm";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(37, 137);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(81, 17);
+            this.labelControl6.TabIndex = 1;
+            this.labelControl6.Text = "Loại thức ăn";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(387, 54);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(29, 17);
+            this.labelControl7.TabIndex = 1;
+            this.labelControl7.Text = "URL";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(37, 175);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(22, 17);
+            this.labelControl5.TabIndex = 1;
+            this.labelControl5.Text = "Giá";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(37, 92);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(79, 17);
+            this.labelControl4.TabIndex = 1;
+            this.labelControl4.Text = "Tên thức ăn";
             // 
             // simpleButton2
             // 
@@ -278,74 +358,6 @@
             this.simpleButton4.TabIndex = 0;
             this.simpleButton4.Text = "Làm mới";
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(37, 49);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(73, 17);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "Mã thức ăn";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(37, 92);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(79, 17);
-            this.labelControl4.TabIndex = 1;
-            this.labelControl4.Text = "Tên thức ăn";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(37, 175);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(22, 17);
-            this.labelControl5.TabIndex = 1;
-            this.labelControl5.Text = "Giá";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(37, 137);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(81, 17);
-            this.labelControl6.TabIndex = 1;
-            this.labelControl6.Text = "Loại thức ăn";
-            // 
-            // txtMaLoai
-            // 
-            this.txtMaLoai.Location = new System.Drawing.Point(105, 51);
-            this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(237, 24);
-            this.txtMaLoai.TabIndex = 3;
-            // 
-            // txtTenLoai
-            // 
-            this.txtTenLoai.Location = new System.Drawing.Point(105, 89);
-            this.txtTenLoai.Name = "txtTenLoai";
-            this.txtTenLoai.Size = new System.Drawing.Size(237, 24);
-            this.txtTenLoai.TabIndex = 3;
-            // 
-            // txtMaTA
-            // 
-            this.txtMaTA.Location = new System.Drawing.Point(129, 51);
-            this.txtMaTA.Name = "txtMaTA";
-            this.txtMaTA.Size = new System.Drawing.Size(237, 24);
-            this.txtMaTA.TabIndex = 3;
-            // 
-            // txtTenTA
-            // 
-            this.txtTenTA.Location = new System.Drawing.Point(129, 89);
-            this.txtTenTA.Name = "txtTenTA";
-            this.txtTenTA.Size = new System.Drawing.Size(237, 24);
-            this.txtTenTA.TabIndex = 3;
-            // 
-            // txtGiaTA
-            // 
-            this.txtGiaTA.Location = new System.Drawing.Point(129, 172);
-            this.txtGiaTA.Name = "txtGiaTA";
-            this.txtGiaTA.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtGiaTA.Size = new System.Drawing.Size(237, 24);
-            this.txtGiaTA.TabIndex = 3;
-            // 
             // lukLoaiTA
             // 
             this.lukLoaiTA.Location = new System.Drawing.Point(129, 134);
@@ -355,14 +367,6 @@
             this.lukLoaiTA.Properties.NullText = "";
             this.lukLoaiTA.Size = new System.Drawing.Size(237, 24);
             this.lukLoaiTA.TabIndex = 3;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(387, 54);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(29, 17);
-            this.labelControl7.TabIndex = 1;
-            this.labelControl7.Text = "URL";
             // 
             // txtURL
             // 
@@ -374,13 +378,13 @@
             this.txtURL.Size = new System.Drawing.Size(237, 24);
             this.txtURL.TabIndex = 3;
             // 
-            // frmMonAn
+            // frmThucAn_LoaiTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 454);
             this.Controls.Add(this.tablePanel1);
-            this.Name = "frmMonAn";
+            this.Name = "frmThucAn_LoaiTA";
             this.Text = "Món ăn";
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcThucAn)).EndInit();
@@ -393,14 +397,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenLoai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenLoai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaTA.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenTA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaTA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenTA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaTA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lukLoaiTA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtURL.Properties)).EndInit();
             this.ResumeLayout(false);

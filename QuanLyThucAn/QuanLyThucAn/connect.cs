@@ -17,20 +17,32 @@ namespace QuanLyThucAn
         public MySqlConnection connect_db()
         {
             MySqlConnection conn_term = new MySqlConnection(
-             "Server=26.9.216.208;Database=thuvien;User Id=admin;password=");
+             "Server=26.9.216.208;Database=dbNhaHang;User Id=admin;password=");
             return conn_term;
         }
         MySqlCommand cmd;
         MySqlDataAdapter da;
         // hihi haha
+
+
         public void ex_cmd(string cmd_text)
         {
             MySqlConnection conn = connect_db();
             conn.Open();
-            cmd = new MySqlCommand(cmd_text, connect_db());
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd = new MySqlCommand(cmd_text, connect_db());
+                cmd.ExecuteNonQuery();     
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+             
             conn.Close();
+            
         }
+
         public DataTable ex_data(string cmd_text)
         {
             MySqlConnection conn = connect_db();
