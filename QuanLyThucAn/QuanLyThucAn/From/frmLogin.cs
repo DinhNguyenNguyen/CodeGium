@@ -67,27 +67,14 @@ namespace QuanLyThucAn.From
             }
             try
             {
-                mataikhoan = getInfo(MATK);
-                if (mataikhoan != "")
+             if(con.ex_data_string(string.Format("select count(*) from taikhoan where user_name = '{0}' and password = '{1}'",
+                 txtUsername.Text, txtPass.Text)) != "0")
                 {
-                    username = getInfo(TENTK);
-                    password = getInfo(MATKHAU);
-                    fullname = getInfo(TENNV);
-                    mataikhoan = getInfo(MATK);
-                    macv = getInfo(MACV);
-                    tencv = getInfo(TENNV);
-                    manv = getInfo(MANV);
-                    frmMain frm = new frmMain();
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Dispose();
+                    set_sys.mess("Đăng nhập thành công !");
                 }
                 else
                 {
-                    XtraMessageBox.Show("Thông tin tài khoản hoặc mật khẩu không đúng \r\nVui lòng đăng nhập lại!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtUsername.EditValue = null;
-                    txtPass.EditValue = null;
-                    txtUsername.Focus();
+                    set_sys.mess("Ten đăng nhập hoặc mật khẩu không chính xác !");
                 }
             }
             catch (Exception ex)
@@ -95,33 +82,6 @@ namespace QuanLyThucAn.From
                 XtraMessageBox.Show("Lỗi!" + ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
-
-        public string getInfo(string info)
-        {
-            string tentk = txtUsername.EditValue.ToString();
-            string pass = txtPass.EditValue.ToString();
-
-            string id = "";
-            try
-            {
-                //
-                string sqlR = string.Format("select * from TAIKHOAN as tk, nhanvien as nv, chucvu as cv where tentk='{0}' and matkhau= '{1}' and tk.manv= nv.manv and tk.macv= cv.macv ", tentk, con.CreateMD5(pass));
-                DataTable dt = new DataTable();
-                dt = con.ex_data(sqlR);
-                if (dt != null)
-                {
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        id = dr[info].ToString();
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                id = "";
-            }
-            return id;
         }
 
         private void txtPass_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
