@@ -80,6 +80,12 @@
     <Compile Include="From\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="From\frmLoaiTA_ThucAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\frmLoaiTA_ThucAn.Designer.cs">
+      <DependentUpon>frmLoaiTA_ThucAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +97,6 @@
     </Compile>
     <Compile Include="From\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="From\frmThucAn_LoaiTA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="From\frmThucAn_LoaiTA.Designer.cs">
-      <DependentUpon>frmThucAn_LoaiTA.cs</DependentUpon>
     </Compile>
     <Compile Include="From\frmTaiKhoan_ChucVu.cs">
       <SubType>Form</SubType>
@@ -116,14 +116,14 @@
     <EmbeddedResource Include="From\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="From\frmLoaiTA_ThucAn.resx">
+      <DependentUpon>frmLoaiTA_ThucAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="From\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="From\frmThucAn_LoaiTA.resx">
-      <DependentUpon>frmThucAn_LoaiTA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmTaiKhoan_ChucVu.resx">
       <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>

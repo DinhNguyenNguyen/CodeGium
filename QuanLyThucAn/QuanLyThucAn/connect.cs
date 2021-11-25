@@ -17,13 +17,32 @@ namespace QuanLyThucAn
         public MySqlConnection connect_db()
         {
             MySqlConnection conn_term = new MySqlConnection(
-             "Server=26.9.216.208;Database=dbNhaHang;User Id=admin;password=");
+             "Server=26.9.216.208;Database=db_NhaHang;User Id=admin;password=");
             return conn_term;
         }
         MySqlCommand cmd;
         MySqlDataAdapter da;
         // hihi haha
 
+        public bool E_DaTa(string cmd_text)
+        {
+            bool check = false;
+            MySqlConnection conn = connect_db();
+            conn.Open();
+            try
+            {
+                cmd = new MySqlCommand(cmd_text, connect_db());
+                cmd.ExecuteNonQuery();
+                check = true;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+
+            conn.Close();
+            return check;
+        }
 
         public void ex_cmd(string cmd_text)
         {
@@ -59,74 +78,74 @@ namespace QuanLyThucAn
             cmd = new MySqlCommand(cmd_text, connect_db());
             return cmd.ExecuteScalar().ToString();
         }
+
         public string creatId(string preFix, string sql)
         {
-            int id = 0;
-            //string id = "";
-            //int countRow = -1;
-            //bool check = false; //Kiem tra ID khong dung thu tu: Flase
-            //DataTable dt;// = readData(sql);
-            //countRow = dt.Rows.Count; //Dem so luong ban ghi co trong bang         
-            //if (countRow > 0) //Co nhieu hơn 1 ban ghi thi moi kiem tra
-            //{
-            //    int count = 1; //ID ao chay song song voi ID trong bang
-            //    foreach (DataRow row in dt.Rows) //Duyet cac dong trong bang
-            //    {
-            //        string idRow = row[0].ToString(); //Lay chuoi chua ID
-            //        int i = Int32.Parse(idRow.Substring(idRow.Length - 8, 8)); //Cat chuoi lay ID
-            //        if (i != count) //Sai thu tu
-            //        {
-            //            count = i - 1; //Gan ID ao bang ID that -1
-            //            check = true; //Check sai thu tu
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            count++; //Khong sai thu tu
-            //        }
-            //    }
-            //    if (check) //Gan ID bị thieu cho ID duoc creat
-            //    {
-            //        countRow = count;
-            //    }
-            //}
-            //if (!check) //Neu khong co ID sai thu tu thi tang len 1 như binh thuong
-            //{
-            //    countRow += 1;
-            //}
-            //if (countRow < 10)
-            //{
-            //    id = preFix + "0000000" + countRow; //U00009
-            //}
-            //else if (countRow < 100)
-            //{
-            //    id = preFix + "000000" + countRow; //U00999
-            //}
-            //else if (countRow < 10000)
-            //{
-            //    id = preFix + "00000" + countRow; //U09999
-            //}
-            //else if (countRow < 100000)
-            //{
-            //    id = preFix + "0000" + countRow; //U09999
-            //}
-            //else if (countRow < 1000000)
-            //{
-            //    id = preFix + "000" + countRow; //U09999
-            //}
-            //else if (countRow < 10000000)
-            //{
-            //    id = preFix + "00" + countRow; //U09999
-            //}
-            //else if (countRow < 100000000)
-            //{
-            //    id = preFix + "0" + countRow; //U09999
-            //}
-            //else if (countRow < 1000000000)
-            //{
-            //    id = preFix + countRow; //U99999
-            //}
-            return "";
+            string id = "";
+            int countRow = -1;
+            bool check = false; //Kiem tra ID khong dung thu tu: Flase
+            DataTable dt = ex_data(sql);
+            countRow = dt.Rows.Count; //Dem so luong ban ghi co trong bang         
+            if (countRow > 0) //Co nhieu hơn 1 ban ghi thi moi kiem tra
+            {
+                int count = 1; //ID ao chay song song voi ID trong bang
+                foreach (DataRow row in dt.Rows) //Duyet cac dong trong bang
+                {
+                    string idRow = row[0].ToString(); //Lay chuoi chua ID
+                    int i = Int32.Parse(idRow.Substring(idRow.Length - 8, 8)); //Cat chuoi lay ID
+                    if (i != count) //Sai thu tu
+                    {
+                        count = i - 1; //Gan ID ao bang ID that -1
+                        check = true; //Check sai thu tu
+                        break;
+                    }
+                    else
+                    {
+                        count++; //Khong sai thu tu
+                    }
+                }
+                if (check) //Gan ID bị thieu cho ID duoc creat
+                {
+                    countRow = count;
+                }
+            }
+            if (!check) //Neu khong co ID sai thu tu thi tang len 1 như binh thuong
+            {
+                countRow += 1;
+            }
+            if (countRow < 10)
+            {
+                id = preFix + "0000000" + countRow; //U00009
+            }
+            else if (countRow < 100)
+            {
+                id = preFix + "000000" + countRow; //U00999
+            }
+            else if (countRow < 10000)
+            {
+                id = preFix + "00000" + countRow; //U09999
+            }
+            else if (countRow < 100000)
+            {
+                id = preFix + "0000" + countRow; //U09999
+            }
+            else if (countRow < 1000000)
+            {
+                id = preFix + "000" + countRow; //U09999
+            }
+            else if (countRow < 10000000)
+            {
+                id = preFix + "00" + countRow; //U09999
+            }
+            else if (countRow < 100000000)
+            {
+                id = preFix + "0" + countRow; //U09999
+            }
+            else if (countRow < 1000000000)
+            {
+                id = preFix + countRow; //U99999
+            }
+            return id;
         }
 
         //check email
