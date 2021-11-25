@@ -12,8 +12,7 @@ namespace ListFood
 {
     public partial class ItemFood : UserControl
     {
-        public ItemFood()
-        {
+        public ItemFood()      {
             InitializeComponent();
             btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
         }

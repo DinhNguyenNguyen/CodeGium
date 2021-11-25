@@ -17,7 +17,7 @@ namespace QuanLyThucAn
         public MySqlConnection connect_db()
         {
             MySqlConnection conn_term = new MySqlConnection(
-             "datasource=https://databases-auth.000webhost.com,port:3306,username=id15353028_admin,password=Antlt1182000@gmail.com,database=id15353028_db_qltv_anz");
+             "Server=26.9.216.208;Database=thuvien;User Id=admin;password=");
             return conn_term;
         }
         MySqlCommand cmd;

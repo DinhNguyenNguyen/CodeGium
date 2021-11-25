@@ -16,10 +16,10 @@ namespace QuanLyThucAn.From
         {
             InitializeComponent();
         }
-
+        connect conn = new connect();
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            conn.connect_db();
         }
     }
 }
