@@ -119,6 +119,8 @@ namespace QuanLyThucAn.From
             txtTenLoai.EditValue = gvLoaiTA.GetRowCellValue(e.RowHandle, "TenLoaiThucAn").ToString();
         }
         #endregion
+         
+
 
 
     }
