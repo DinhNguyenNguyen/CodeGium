@@ -22,7 +22,7 @@ namespace QuanLyThucAn
         }
         MySqlCommand cmd;
         MySqlDataAdapter da;
-        // 
+        // hihi haha
         public void ex_cmd(string cmd_text)
         {
             MySqlConnection conn = connect_db();
