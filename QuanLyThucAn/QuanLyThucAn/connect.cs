@@ -8,155 +8,117 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace QuanLyThucAn
 {
     public class connect
     {
-        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=DBNhaHang;Integrated Security=True");
-
-        private void openConnect()
+        public MySqlConnection connect_db()
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
+            MySqlConnection conn_term = new MySqlConnection(
+             "datasource=https://databases-auth.000webhost.com,port:3306,username=id15353028_admin,password=Antlt1182000@gmail.com,database=id15353028_db_qltv_anz");
+            return conn_term;
         }
-
-        private void closeConnect()
+        MySqlCommand cmd;
+        MySqlDataAdapter da;
+        // 
+        public void ex_cmd(string cmd_text)
         {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
+            MySqlConnection conn = connect_db();
+            conn.Open();
+            cmd = new MySqlCommand(cmd_text, connect_db());
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
-
-        //ExecuteData: Them sua xoa du lieu
-        public Boolean exeData(string cmd)
+        public DataTable ex_data(string cmd_text)
         {
-            openConnect();
-            Boolean check = false;
-            try
-            {
-                SqlCommand sc = new SqlCommand(cmd, con);
-                sc.ExecuteNonQuery();
-                check = true;
-            }
-            catch (Exception)
-            {
-                check = false;
-            }
-            closeConnect();
-            return check;
-        }
-        //
-        public void Ex_vp(string str)
-        {
-            openConnect();
-            try
-            {
-                SqlCommand sc = new SqlCommand(str, con);
-                sc.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
-            closeConnect();
-
-        }
-
-        //ReadData: Doc du lieu tu bang ra DataTable
-        public DataTable readData(string cmd)
-        {
-            openConnect();
+            MySqlConnection conn = connect_db();
             DataTable dt = new DataTable();
-            try
-            {
-                SqlCommand sc = new SqlCommand(cmd, con);
-                SqlDataAdapter da = new SqlDataAdapter(sc);
-                da.Fill(dt);
-            }
-            catch (Exception)
-            {
-                dt = null;
-            }
-            closeConnect();
+            conn.Open();
+            da = new MySqlDataAdapter(cmd_text, conn);
+            da.Fill(dt);
             return dt;
         }
-
-        //CreatID: tao ID moi theo tien to(preFix)
+        public string ex_data_string(string cmd_text)
+        {
+            MySqlConnection conn = connect_db();
+            conn.Open();
+            cmd = new MySqlCommand(cmd_text, connect_db());
+            return cmd.ExecuteScalar().ToString();
+        }
         public string creatId(string preFix, string sql)
         {
-            string id = "";
-            int countRow = -1;
-            bool check = false; //Kiem tra ID khong dung thu tu: Flase
-            DataTable dt = readData(sql);
-            countRow = dt.Rows.Count; //Dem so luong ban ghi co trong bang         
-            if (countRow > 0) //Co nhieu hơn 1 ban ghi thi moi kiem tra
-            {
-                int count = 1; //ID ao chay song song voi ID trong bang
-                foreach (DataRow row in dt.Rows) //Duyet cac dong trong bang
-                {
-                    string idRow = row[0].ToString(); //Lay chuoi chua ID
-                    int i = Int32.Parse(idRow.Substring(idRow.Length - 8, 8)); //Cat chuoi lay ID
-                    if (i != count) //Sai thu tu
-                    {
-                        count = i - 1; //Gan ID ao bang ID that -1
-                        check = true; //Check sai thu tu
-                        break;
-                    }
-                    else
-                    {
-                        count++; //Khong sai thu tu
-                    }
-                }
-                if (check) //Gan ID bị thieu cho ID duoc creat
-                {
-                    countRow = count;
-                }
-            }
-            if (!check) //Neu khong co ID sai thu tu thi tang len 1 như binh thuong
-            {
-                countRow += 1;
-            }
-            if (countRow < 10)
-            {
-                id = preFix + "0000000" + countRow; //U00009
-            }
-            else if (countRow < 100)
-            {
-                id = preFix + "000000" + countRow; //U00999
-            }
-            else if (countRow < 10000)
-            {
-                id = preFix + "00000" + countRow; //U09999
-            }
-            else if (countRow < 100000)
-            {
-                id = preFix + "0000" + countRow; //U09999
-            }
-            else if (countRow < 1000000)
-            {
-                id = preFix + "000" + countRow; //U09999
-            }
-            else if (countRow < 10000000)
-            {
-                id = preFix + "00" + countRow; //U09999
-            }
-            else if (countRow < 100000000)
-            {
-                id = preFix + "0" + countRow; //U09999
-            }
-            else if (countRow < 1000000000)
-            {
-                id = preFix + countRow; //U99999
-            }
-            return id;
+            int id = 0;
+            //string id = "";
+            //int countRow = -1;
+            //bool check = false; //Kiem tra ID khong dung thu tu: Flase
+            //DataTable dt;// = readData(sql);
+            //countRow = dt.Rows.Count; //Dem so luong ban ghi co trong bang         
+            //if (countRow > 0) //Co nhieu hơn 1 ban ghi thi moi kiem tra
+            //{
+            //    int count = 1; //ID ao chay song song voi ID trong bang
+            //    foreach (DataRow row in dt.Rows) //Duyet cac dong trong bang
+            //    {
+            //        string idRow = row[0].ToString(); //Lay chuoi chua ID
+            //        int i = Int32.Parse(idRow.Substring(idRow.Length - 8, 8)); //Cat chuoi lay ID
+            //        if (i != count) //Sai thu tu
+            //        {
+            //            count = i - 1; //Gan ID ao bang ID that -1
+            //            check = true; //Check sai thu tu
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            count++; //Khong sai thu tu
+            //        }
+            //    }
+            //    if (check) //Gan ID bị thieu cho ID duoc creat
+            //    {
+            //        countRow = count;
+            //    }
+            //}
+            //if (!check) //Neu khong co ID sai thu tu thi tang len 1 như binh thuong
+            //{
+            //    countRow += 1;
+            //}
+            //if (countRow < 10)
+            //{
+            //    id = preFix + "0000000" + countRow; //U00009
+            //}
+            //else if (countRow < 100)
+            //{
+            //    id = preFix + "000000" + countRow; //U00999
+            //}
+            //else if (countRow < 10000)
+            //{
+            //    id = preFix + "00000" + countRow; //U09999
+            //}
+            //else if (countRow < 100000)
+            //{
+            //    id = preFix + "0000" + countRow; //U09999
+            //}
+            //else if (countRow < 1000000)
+            //{
+            //    id = preFix + "000" + countRow; //U09999
+            //}
+            //else if (countRow < 10000000)
+            //{
+            //    id = preFix + "00" + countRow; //U09999
+            //}
+            //else if (countRow < 100000000)
+            //{
+            //    id = preFix + "0" + countRow; //U09999
+            //}
+            //else if (countRow < 1000000000)
+            //{
+            //    id = preFix + countRow; //U99999
+            //}
+            return "";
         }
 
         //check email
-        public  bool CheckEmail(string inputEmail)
+        public static bool CheckEmail(string inputEmail)
         {
             string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                   @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
@@ -168,41 +130,9 @@ namespace QuanLyThucAn
                 return (false);
         }
         //chek sdt
-        public  bool checkSDT(string sdt)
-        {
-            int lenght;
-            lenght = sdt.Length;
-            if (lenght == 10)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
 
         //check cùng tên trong bảg
-        public  bool checkName(string query, TextEdit textEdit, string column)
-        {
-            bool checkName = false;
-            //connection con = new connection();
-            DataTable dt = new DataTable();
-            dt = readData(query);
-            if (dt != null)
-            {
-                foreach (DataRow dr in dt.Rows)
-                {
-                    if (textEdit.EditValue.ToString().Trim().Equals(dr[column].ToString()))
-                    {
-                        checkName = true;
-                        // return true;
-                        break;
-                    }
-                }
-            }
-            return checkName;
-        }
 
         public string CreateMD5(string str)
         {
