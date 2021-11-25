@@ -21,5 +21,33 @@ namespace QuanLyThucAn.From
         {
             conn.connect_db();
         }
+
+
+        private Form formCheck(Type ftype)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == ftype)
+                {
+                    return f;
+                }
+            }
+            return null;
+        }
+
+        private void aceKhachHang_Click(object sender, EventArgs e)
+        {
+            //Form frm = formCheck(typeof(frmKhachHang));
+            //if (frm == null)
+            //{
+                frmKhachHang f = new frmKhachHang();
+                f.MdiParent = this;
+                f.Show();
+            //}
+            //else
+            //{
+            //    frm.Activate();
+            //}
+        }
     }
 }
