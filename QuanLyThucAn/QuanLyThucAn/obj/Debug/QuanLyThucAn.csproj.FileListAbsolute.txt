@@ -99,3 +99,4 @@ F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ru\DevExpress.Of
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmMain.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmThucAn_LoaiTA.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmTaiKhoan_ChucVu.resources
+F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\MySql.Data.dll

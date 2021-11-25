@@ -108,7 +108,7 @@ namespace QuanLyThucAn.From
                 //
                 string sqlR = string.Format("select * from TAIKHOAN as tk, nhanvien as nv, chucvu as cv where tentk='{0}' and matkhau= '{1}' and tk.manv= nv.manv and tk.macv= cv.macv ", tentk, con.CreateMD5(pass));
                 DataTable dt = new DataTable();
-                dt = con.readData(sqlR);
+                dt = con.ex_data(sqlR);
                 if (dt != null)
                 {
                     foreach (DataRow dr in dt.Rows)

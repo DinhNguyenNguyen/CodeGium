@@ -133,7 +133,8 @@
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.Name = "frmMain";
             this.NavigationControl = this.accordionControl1;
-            this.Text = "frmMain";
+            this.Text = "Other Food";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
