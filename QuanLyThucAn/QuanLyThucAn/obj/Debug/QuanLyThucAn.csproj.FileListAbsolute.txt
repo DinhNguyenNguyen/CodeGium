@@ -96,5 +96,6 @@ F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\de\DevExpress.Of
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
-F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmThucAn.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmMain.resources
+F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmThucAn_LoaiTA.resources
+F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmTaiKhoan_ChucVu.resources

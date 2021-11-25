@@ -83,11 +83,17 @@
     <Compile Include="From\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="From\frmMonAn.cs">
+    <Compile Include="From\frmThucAn_LoaiTA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="From\frmMonAn.Designer.cs">
-      <DependentUpon>frmMonAn.cs</DependentUpon>
+    <Compile Include="From\frmThucAn_LoaiTA.Designer.cs">
+      <DependentUpon>frmThucAn_LoaiTA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\frmTaiKhoan_ChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\frmTaiKhoan_ChucVu.Designer.cs">
+      <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +103,11 @@
     <EmbeddedResource Include="From\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="From\frmMonAn.resx">
-      <DependentUpon>frmMonAn.cs</DependentUpon>
+    <EmbeddedResource Include="From\frmThucAn_LoaiTA.resx">
+      <DependentUpon>frmThucAn_LoaiTA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\frmTaiKhoan_ChucVu.resx">
+      <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
