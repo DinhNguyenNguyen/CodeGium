@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DoAn));
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.lblGia = new DevExpress.XtraEditors.LabelControl();
             this.lblName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -47,36 +46,41 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(99, 249);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Bold);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(116, 249);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(40, 40);
             this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Text = "--";
             // 
-            // simpleButton2
+            // btnAdd
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(162, 249);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(40, 40);
-            this.simpleButton2.TabIndex = 2;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAdd.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.btnAdd.Location = new System.Drawing.Point(162, 249);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(40, 40);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "+";
             // 
             // lblGia
             // 
             this.lblGia.Location = new System.Drawing.Point(8, 261);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(85, 17);
+            this.lblGia.Size = new System.Drawing.Size(78, 17);
             this.lblGia.TabIndex = 3;
-            this.lblGia.Text = "labelControl1";
+            this.lblGia.Text = "10.000 VNĐ";
             // 
             // lblName
             // 
-            this.lblName.Location = new System.Drawing.Point(3, 174);
+            this.lblName.Location = new System.Drawing.Point(8, 180);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(85, 17);
+            this.lblName.Size = new System.Drawing.Size(22, 17);
             this.lblName.TabIndex = 4;
-            this.lblName.Text = "labelControl2";
+            this.lblName.Text = "Cải";
             // 
             // UC_DoAn
             // 
@@ -84,7 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblGia);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pictureEdit1);
             this.Name = "UC_DoAn";
@@ -99,7 +103,7 @@
 
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.LabelControl lblGia;
         private DevExpress.XtraEditors.LabelControl lblName;
     }

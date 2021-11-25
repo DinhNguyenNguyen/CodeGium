@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.aceChucNang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -38,8 +40,10 @@
             this.aceKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceMonAn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
@@ -75,18 +79,21 @@
             // 
             // aecDatMon
             // 
+            this.aecDatMon.ImageOptions.Image = global::QuanLyThucAn.Properties.Resources.menu;
             this.aecDatMon.Name = "aecDatMon";
             this.aecDatMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aecDatMon.Text = "Đặt món";
             // 
             // aceXemMon
             // 
+            this.aceXemMon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("aceXemMon.ImageOptions.Image")));
             this.aceXemMon.Name = "aceXemMon";
             this.aceXemMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceXemMon.Text = "Xem món";
             // 
             // acePhieuGoiMon
             // 
+            this.acePhieuGoiMon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("acePhieuGoiMon.ImageOptions.Image")));
             this.acePhieuGoiMon.Name = "acePhieuGoiMon";
             this.acePhieuGoiMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acePhieuGoiMon.Text = "Phiếu gọi món";
@@ -102,12 +109,15 @@
             // 
             // aceKhachHang
             // 
+            this.aceKhachHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("aceKhachHang.ImageOptions.Image")));
             this.aceKhachHang.Name = "aceKhachHang";
             this.aceKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceKhachHang.Text = "Khách hàng";
+            this.aceKhachHang.Click += new System.EventHandler(this.aceKhachHang_Click);
             // 
             // aceMonAn
             // 
+            this.aceMonAn.ImageOptions.Image = global::QuanLyThucAn.Properties.Resources.food;
             this.aceMonAn.Name = "aceMonAn";
             this.aceMonAn.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceMonAn.Text = "Món ăn";
@@ -121,6 +131,10 @@
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -133,10 +147,13 @@
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.Name = "frmMain";
             this.NavigationControl = this.accordionControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Other Food";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,5 +169,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceHeThong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceKhachHang;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceMonAn;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
