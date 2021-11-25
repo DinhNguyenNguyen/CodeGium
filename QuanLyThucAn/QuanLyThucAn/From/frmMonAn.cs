@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyThucAn.From
 {
-    public partial class frmThucAn : DevExpress.XtraEditors.XtraForm
+    public partial class frmMonAn : DevExpress.XtraEditors.XtraForm
     {
-        public frmThucAn()
+        public frmMonAn()
         {
             InitializeComponent();
         }

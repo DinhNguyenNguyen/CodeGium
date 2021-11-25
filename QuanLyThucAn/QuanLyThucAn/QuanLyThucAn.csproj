@@ -71,34 +71,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connect.cs" />
-    <Compile Include="From\frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="From\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="From\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="From\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="From\frmThucAn.cs">
+    <Compile Include="From\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="From\frmThucAn.Designer.cs">
-      <DependentUpon>frmThucAn.cs</DependentUpon>
+    <Compile Include="From\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\frmMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\frmMonAn.Designer.cs">
+      <DependentUpon>frmMonAn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="From\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="From\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="From\frmThucAn.resx">
-      <DependentUpon>frmThucAn.cs</DependentUpon>
+    <EmbeddedResource Include="From\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\frmMonAn.resx">
+      <DependentUpon>frmMonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

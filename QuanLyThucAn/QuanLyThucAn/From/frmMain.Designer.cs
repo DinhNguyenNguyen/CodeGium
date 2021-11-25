@@ -1,4 +1,4 @@
-﻿namespace QuanLyThucAn
+﻿namespace QuanLyThucAn.From
 {
     partial class frmMain
     {
@@ -28,61 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.aceChucNang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aecDatMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceXemMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acePhieuGoiMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceHeThong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceMonAn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.barhXinChao = new DevExpress.XtraBars.BarHeaderItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // fluentDesignFormContainer1
+            // 
+            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 51);
+            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(403, 408);
+            this.fluentDesignFormContainer1.TabIndex = 0;
+            // 
+            // accordionControl1
+            // 
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aceChucNang,
+            this.aceHeThong});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 51);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.Size = new System.Drawing.Size(260, 408);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            // 
+            // aceChucNang
+            // 
+            this.aceChucNang.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aecDatMon,
+            this.aceXemMon,
+            this.acePhieuGoiMon});
+            this.aceChucNang.Expanded = true;
+            this.aceChucNang.Name = "aceChucNang";
+            this.aceChucNang.Text = "Chức năng";
+            // 
+            // aecDatMon
+            // 
+            this.aecDatMon.Name = "aecDatMon";
+            this.aecDatMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aecDatMon.Text = "Đặt món";
+            // 
+            // aceXemMon
+            // 
+            this.aceXemMon.Name = "aceXemMon";
+            this.aceXemMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceXemMon.Text = "Xem món";
+            // 
+            // acePhieuGoiMon
+            // 
+            this.acePhieuGoiMon.Name = "acePhieuGoiMon";
+            this.acePhieuGoiMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acePhieuGoiMon.Text = "Phiếu gọi món";
+            // 
+            // aceHeThong
+            // 
+            this.aceHeThong.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aceKhachHang,
+            this.aceMonAn});
+            this.aceHeThong.Expanded = true;
+            this.aceHeThong.Name = "aceHeThong";
+            this.aceHeThong.Text = "Hệ thống";
+            // 
+            // aceKhachHang
+            // 
+            this.aceKhachHang.Name = "aceKhachHang";
+            this.aceKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceKhachHang.Text = "Khách hàng";
+            // 
+            // aceMonAn
+            // 
+            this.aceMonAn.Name = "aceMonAn";
+            this.aceMonAn.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceMonAn.Text = "Món ăn";
             // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
-            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barhXinChao,
-            this.barButtonItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(820, 29);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(663, 51);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barhXinChao);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem1);
-            // 
-            // barhXinChao
-            // 
-            this.barhXinChao.Caption = "Hello";
-            this.barhXinChao.Id = 0;
-            this.barhXinChao.Name = "barhXinChao";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 444);
+            this.ClientSize = new System.Drawing.Size(663, 459);
+            this.ControlContainer = this.fluentDesignFormContainer1;
+            this.Controls.Add(this.fluentDesignFormContainer1);
+            this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
-            this.Text = "Quản Lý Thức Ăn";
+            this.NavigationControl = this.accordionControl1;
+            this.Text = "frmMain";
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceChucNang;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
-        private DevExpress.XtraBars.BarHeaderItem barhXinChao;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aecDatMon;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceXemMon;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acePhieuGoiMon;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceHeThong;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceKhachHang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceMonAn;
     }
 }

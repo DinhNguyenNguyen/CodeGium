@@ -45,7 +45,6 @@ F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\es\DevExpress.Pd
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csprojAssemblyReference.cache
-F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.frmMain.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmLogin.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Properties.Resources.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csproj.GenerateResource.cache
@@ -98,3 +97,4 @@ F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\es\DevExpress.Of
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmThucAn.resources
+F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmMain.resources

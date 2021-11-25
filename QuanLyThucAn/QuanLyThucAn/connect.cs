@@ -156,7 +156,7 @@ namespace QuanLyThucAn
         }
 
         //check email
-        public static bool CheckEmail(string inputEmail)
+        public  bool CheckEmail(string inputEmail)
         {
             string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                   @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
@@ -168,7 +168,7 @@ namespace QuanLyThucAn
                 return (false);
         }
         //chek sdt
-        public static bool checkSDT(string sdt)
+        public  bool checkSDT(string sdt)
         {
             int lenght;
             lenght = sdt.Length;
