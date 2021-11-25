@@ -15,7 +15,7 @@ namespace QuanLyThucAn.From
     {
         public frmKhachHang()
         {
-            InitializeComponent();
+            InitializeComponent(); // cc
         }
     }
 }
