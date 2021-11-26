@@ -102,3 +102,4 @@ F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\MySql.Data.dll
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmKhachHang.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.UC_DoAn.resources
 F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmLoaiTA_ThucAn.resources
+F:\GitHub\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmMainn.resources

@@ -11,19 +11,17 @@ using System.Windows.Forms;
 
 namespace QuanLyThucAn.From
 {
-    public partial class frmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class frmMainn : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        public frmMain()
+        public frmMainn()
         {
             InitializeComponent();
         }
-        connect conn = new connect();
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            conn.connect_db();
-        }
 
-        // mdi
+        private void frmMainn_Load(object sender, EventArgs e)
+        {
+            
+        }
         void act_frm(XtraForm frm, string text_frm, string name_frm)
         {
             if (check_exit(frm) == false)
@@ -47,16 +45,15 @@ namespace QuanLyThucAn.From
             return false;
         }
 
-
-        private void aceKhachHang_Click(object sender, EventArgs e)
-        {
-            frmKhachHang f = new frmKhachHang();
-            act_frm(f, f.Text, f.Name);
-        }
-
         private void aceMonAn_Click(object sender, EventArgs e)
         {
             var f = new frmLoaiTA_ThucAn();
+            act_frm(f, f.Text, f.Name);
+        }
+
+        private void aceKhachHang_Click(object sender, EventArgs e)
+        {
+            var f = new cc();
             act_frm(f, f.Text, f.Name);
         }
     }

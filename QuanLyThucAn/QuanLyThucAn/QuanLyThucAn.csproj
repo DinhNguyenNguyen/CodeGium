@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connect.cs" />
+    <Compile Include="From\cc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\cc.Designer.cs">
+      <DependentUpon>cc.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="From\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\frmMainn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\frmMainn.Designer.cs">
+      <DependentUpon>frmMainn.cs</DependentUpon>
     </Compile>
     <Compile Include="From\frmTaiKhoan_ChucVu.cs">
       <SubType>Form</SubType>
@@ -124,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\frmMainn.resx">
+      <DependentUpon>frmMainn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmTaiKhoan_ChucVu.resx">
       <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>
