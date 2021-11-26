@@ -196,13 +196,13 @@ namespace QuanLyThucAn.From
             
             if (conn.E_DaTa(sqlU))
             {
-                conn.ThongBaoTC("Thêm tài khoản cho ", txtHoTen);
+                conn.ThongBaoTC("Thêm thức ăn ", txtHoTen);
                 loadTK();
                 btnLamMoi.PerformClick();
             }
             else
             {
-                conn.ThongBaoTB("Thêm tài khoản cho ", txtHoTen);
+                conn.ThongBaoTB("Thêm thức ăn ", txtHoTen);
             }
         }
 
