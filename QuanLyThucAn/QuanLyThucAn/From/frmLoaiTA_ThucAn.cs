@@ -58,6 +58,7 @@ namespace QuanLyThucAn.From
             string sqlILoaiTA = string.Format("insert into loaidoan values('{0}','{1}')", conn.creatId("TF",sqlLoaiTA), txtTenLoai.EditValue.ToString());
             if (conn.E_DaTa(sqlILoaiTA))
             {
+                
                 XtraMessageBox.Show("Thêm loại thức ăn " + txtTenLoai.EditValue.ToString() + " thành công", "Thông báo");
                 LoadLoaiTA();
             }

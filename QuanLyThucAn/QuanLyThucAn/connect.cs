@@ -161,7 +161,19 @@ namespace QuanLyThucAn
                 return (false);
         }
         //chek sdt
-
+        public static bool checkSDT(string sdt)
+        {
+            int lenght;
+            lenght = sdt.Length;
+            if (lenght == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //check cùng tên trong bảg
 
@@ -183,5 +195,13 @@ namespace QuanLyThucAn
         }
 
 
+        public void  ThongBaoTC(string chuoi, TextEdit text)
+        {
+            XtraMessageBox.Show(chuoi + text.EditValue.ToString() + " thành công", "Thông báo");
+        }
+        public void ThongBaoTB(string chuoi, TextEdit text)
+        {
+            XtraMessageBox.Show(chuoi + text.EditValue.ToString() + " thất bại", "Thông báo");
+        }
     }
 }

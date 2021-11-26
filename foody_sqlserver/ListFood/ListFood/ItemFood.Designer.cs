@@ -29,23 +29,15 @@ namespace ListFood
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lbl_name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
             this.pic_food = new ListFood.VBImageColorOverlay();
             this.lblSelected = new System.Windows.Forms.Label();
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnMinus = new FontAwesome.Sharp.IconButton();
             this.pic_food.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 15;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // lbl_name
             // 
@@ -116,11 +108,6 @@ namespace ListFood
             this.lblSelected.Text = "0";
             this.lblSelected.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 5;
-            this.guna2Elipse2.TargetControl = this.lblSelected;
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Gainsboro;
@@ -185,12 +172,10 @@ namespace ListFood
         #endregion
 
         private VBImageColorOverlay pic_food;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label lbl_price;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lblSelected;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private FontAwesome.Sharp.IconButton btnAdd;
         private FontAwesome.Sharp.IconButton btnMinus;
     }
