@@ -48,7 +48,7 @@ namespace QuanLyThucAn
         }
         private void vc_Load(object sender, EventArgs e)
         {
-            var f = new frmLoaiTA_ThucAn();
+            var f = new frmDatMon();
             act_frm(f, f.Text, f.Name);
         }
 
@@ -68,7 +68,8 @@ namespace QuanLyThucAn
 
         private void aecDatMon_Click(object sender, EventArgs e)
         {
-            //set_sys.mess("Bạn Như loz");
+            var f = new frmDatMon();
+            act_frm(f, f.Text, f.Name);
         }
 
         private void aceDangXuat_Click(object sender, EventArgs e)

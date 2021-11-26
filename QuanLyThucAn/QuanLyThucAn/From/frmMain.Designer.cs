@@ -79,7 +79,7 @@
             // 
             // aceDangXuat
             // 
-            this.aceDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.aceDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("aceDangXuat.ImageOptions.Image")));
             this.aceDangXuat.Name = "aceDangXuat";
             this.aceDangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceDangXuat.Text = "Đăng xuất";
@@ -148,6 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 483);
             this.Controls.Add(this.accordionControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmMain.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
