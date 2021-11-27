@@ -40,10 +40,22 @@ namespace QuanLyThucAn.From
             }
         }
 
+        public void LoadLoaiTAonTA()
+        {
+            DataTable dt = conn.ex_data(sqlLoaiTA);
+            if (dt != null)
+            {
+                lukLoaiTA.Properties.DataSource = dt;
+                lukLoaiTA.Properties.DisplayMember = "TenLoaiThucAn";
+                lukLoaiTA.Properties.ValueMember = "id_LoaiThucAn";
+            }
+        }
+
         private void frmLoaiTA_ThucAn_Load(object sender, EventArgs e)
         {
             LoadLoaiTA();
             LoadThucAn();
+            LoadLoaiTAonTA();
         }
 
         #region Loại thức ăn
@@ -119,10 +131,123 @@ namespace QuanLyThucAn.From
             txtMaLoai.EditValue = gvLoaiTA.GetRowCellValue(e.RowHandle, "id_LoaiThucAn").ToString();
             txtTenLoai.EditValue = gvLoaiTA.GetRowCellValue(e.RowHandle, "TenLoaiThucAn").ToString();
         }
+
+
         #endregion
-         
 
+        private void btnLamMoiF_Click(object sender, EventArgs e)
+        {
+            txtGia.EditValue = "";
+            txtMaTA.EditValue = "";
+            txtTenTA.EditValue = "";
+            txtURL.EditValue = "";
+            lukLoaiTA.EditValue = "";
+            txtTenTA.Focus();
+        }
 
+        private void btnSuaF_Click(object sender, EventArgs e)
+        {
+            if (txtMaTA.EditValue == null || txtMaTA.EditValue.ToString().Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa nhập thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaTA.Focus();
+                return;
+            }
+            string sqlU = string.Format("update doan set id_taikhoan= '{0}',tenthucan= '{1}',gia={2},url='{3}', id_loaithucan='{4}' where id_thucan='{5}'", frmLogin.mataikhoan,  txtTenTA.EditValue.ToString(), Convert.ToInt32(txtGia.EditValue.ToString()), txtURL.EditValue.ToString(), lukLoaiTA.EditValue,txtMaTA.EditValue.ToString());
 
+            if (conn.E_DaTa(sqlU))
+            {
+                conn.ThongBaoTC("Sửa thức ăn ", txtTenTA);
+                LoadThucAn();
+                btnLamMoiF.PerformClick();
+            }
+            else
+            {
+                conn.ThongBaoTB("Sửa thức ăn ", txtTenTA);
+            }
+        }
+
+        private void btnXoaF_Click(object sender, EventArgs e)
+        {
+            if (txtMaTA.EditValue.ToString() == null || txtMaTA.EditValue.ToString().Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa chọn thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaTA.Focus();
+                return;
+            }
+            string sqlD = string.Format("delete from doan where id_ThucAn='{0}'", txtMaTA.EditValue.ToString());
+            if (conn.E_DaTa(sqlD))
+            {
+                XtraMessageBox.Show("Xoá  thức ăn " + txtMaTA.EditValue.ToString() + " thành công", "Thông báo");
+                LoadLoaiTA();
+            }
+            else
+            {
+                XtraMessageBox.Show("Xoá loại thức ăn " + txtMaTA.EditValue.ToString() + " thất bại", "Thông báo");
+            }
+        }
+
+        private void btnThemF_Click(object sender, EventArgs e)
+        {
+
+            if (txtTenTA.EditValue == null || txtTenTA.EditValue.ToString().Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa nhập tên thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTenTA.Focus();
+                return;
+            }
+            if (lukLoaiTA.EditValue == null || lukLoaiTA.EditValue.ToString().Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa nhập loại thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lukLoaiTA.Focus();
+                return;
+            }
+            if (txtGia.EditValue == null || txtGia.EditValue.ToString().Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa nhập giá thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGia.Focus();
+                return;
+            }
+            if (txtURL.EditValue == null || txtURL.EditValue.ToString().Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa chọn đường dẫn ảnh thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtURL.Focus();
+                return;
+            }
+
+            string sqlU = string.Format("insert doan values('{0}','{1}','{2}','{3}',{4},'{5}')", conn.creatId("TA", sqlDoAn),frmLogin.mataikhoan , lukLoaiTA.EditValue, txtTenTA.EditValue.ToString(), Convert.ToInt32(txtGia.EditValue.ToString()), txtURL.EditValue.ToString());
+
+            if (conn.E_DaTa(sqlU))
+            {
+                conn.ThongBaoTC("Thêm thức ăn ", txtTenTA);
+                LoadThucAn();
+                btnLamMoiF.PerformClick();
+            }
+            else
+            {
+                conn.ThongBaoTB("Thêm thức ăn ", txtTenTA);
+            }
+        }
+
+        private void gvThucAn_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            txtGia.EditValue = gvThucAn.GetRowCellValue(e.RowHandle,"gia");
+            txtMaTA.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "id_ThucAn");
+            txtTenTA.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "TenThucAn");
+            txtURL.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "URL");
+            lukLoaiTA.Text = gvThucAn.GetRowCellValue(e.RowHandle, "id_LoaiThucAn").ToString();
+        }
+
+        private void txtURL_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Title = "Chọn một hình ảnh thức ăn";
+            dlg.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                txtURL.Text = dlg.FileName;
+                
+            }
+        }
     }
 }

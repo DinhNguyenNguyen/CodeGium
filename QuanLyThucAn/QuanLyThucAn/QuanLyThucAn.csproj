@@ -50,6 +50,10 @@
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Data.v19.2" />
     <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.Tutorials.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Tutorials.v19.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Utils.v19.2" />
     <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2" />
@@ -58,6 +62,7 @@
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data">
       <HintPath>E:\App Download\Extenyion\MySql.Data.dll</HintPath>
     </Reference>
@@ -74,11 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connect.cs" />
-    <Compile Include="From\cc.cs">
+    <Compile Include="From\frmDatMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="From\cc.Designer.cs">
-      <DependentUpon>cc.cs</DependentUpon>
+    <Compile Include="From\frmDatMon.Designer.cs">
+      <DependentUpon>frmDatMon.cs</DependentUpon>
     </Compile>
     <Compile Include="From\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -98,33 +103,24 @@
     <Compile Include="From\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="From\frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="From\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="From\frmMainn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="From\frmMainn.Designer.cs">
-      <DependentUpon>frmMainn.cs</DependentUpon>
-    </Compile>
     <Compile Include="From\frmTaiKhoan_ChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="From\frmTaiKhoan_ChucVu.Designer.cs">
       <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="From\UC_DoAn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="From\UC_DoAn.Designer.cs">
-      <DependentUpon>UC_DoAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="set_sys.cs" />
+    <Compile Include="From\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="From\frmDatMon.resx">
+      <DependentUpon>frmDatMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="From\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,17 +130,8 @@
     <EmbeddedResource Include="From\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="From\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="From\frmMainn.resx">
-      <DependentUpon>frmMainn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="From\frmTaiKhoan_ChucVu.resx">
       <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="From\UC_DoAn.resx">
-      <DependentUpon>UC_DoAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,6 +144,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="From\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

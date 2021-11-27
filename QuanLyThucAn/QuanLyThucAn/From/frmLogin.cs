@@ -20,13 +20,13 @@ namespace QuanLyThucAn.From
 
         connect con = new connect();
         //gán biến mặc định trc cho tiện
-        private const string MATK = "MATK";
-        private const string MANV = "MANV";
-        private const string TENNV = "TENNV";
-        private const string TENTK = "TENTK";
-        private const string MATKHAU = "MATKHAU";
-        private const string MACV = "MaCV";
-        private const string TENCV = "TenCV";
+        private const string MATK = "id_taikhoan";
+        private const string HOVATEN = "hovaten";
+        //private const string TENNV = "TENNV";
+        private const string TENTK = "username";
+        private const string MATKHAU = "password";
+        private const string MACV = "id_chucvu";
+        private const string TENCV = "tenchucvu";
 
 
         //biến liên thông
@@ -65,22 +65,35 @@ namespace QuanLyThucAn.From
                 txtPass.Focus();
                 return;
             }
+
             try
             {
-             if(con.ex_data_string(string.Format("select count(*) from taikhoan where user_name = '{0}' and password = '{1}'",
-                 txtUsername.Text, txtPass.Text)) != "0")
+                mataikhoan = getInfo(MATK);
+                if (mataikhoan != "")
                 {
-                    set_sys.mess("Đăng nhập thành công !");
+                    username = getInfo(TENTK);
+                    password = getInfo(MATKHAU);
+                    fullname = getInfo(HOVATEN);
+                    mataikhoan = getInfo(MATK);
+                    macv = getInfo(MACV);
+                    tencv = getInfo(TENCV);
+                  
+                    frmMain frm = new frmMain();
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Dispose();
                 }
                 else
                 {
-                    set_sys.mess("Ten đăng nhập hoặc mật khẩu không chính xác !");
+                    XtraMessageBox.Show("Thông tin tài khoản hoặc mật khẩu không đúng \r\nVui lòng đăng nhập lại!", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show("Lỗi!" + ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
 
         }
 
@@ -94,6 +107,35 @@ namespace QuanLyThucAn.From
             {
                 txtPass.Properties.UseSystemPasswordChar = true;
             }
+        }
+
+        public string getInfo(string info)
+        {
+            string tentk = txtUsername.EditValue.ToString();
+            string pass = txtPass.EditValue.ToString();
+
+            string id = "";
+            try
+            {
+                //
+                string sqlR = string.Format("select * from TAIKHOAN as tk, chucvu as cv where user_name='{0}' and password= '{1}' and  tk.id_chucvu= cv.id_chucvu", tentk,con.CreateMD5(pass).ToUpper());
+                DataTable dt = new DataTable();
+                
+                dt = con.ex_data(sqlR);
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        id = dr[info].ToString();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+                id = "";
+            }
+            return id;
         }
     }
 }
