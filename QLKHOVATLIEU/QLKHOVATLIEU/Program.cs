@@ -16,7 +16,7 @@ namespace QLKHOVATLIEU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmnhanvien());
+            Application.Run(new frmhoadon());
             //Application.Run(new  LoaiSanPham());
         }
     }

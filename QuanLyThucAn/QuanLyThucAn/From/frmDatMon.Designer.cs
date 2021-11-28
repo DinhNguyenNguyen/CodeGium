@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatMon));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -40,14 +40,15 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lkKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ltbTien = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.gcThucAn = new DevExpress.XtraGrid.GridControl();
             this.gvThucAn = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,62 +61,104 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSub = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
+            this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcThucAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvThucAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 38.76F)});
-            this.tablePanel1.Controls.Add(this.groupControl1);
+            this.tablePanel1.Controls.Add(this.tablePanel2);
             this.tablePanel1.Controls.Add(this.gcThucAn);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 138F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 227F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(1113, 497);
             this.tablePanel1.TabIndex = 0;
             // 
+            // tablePanel2
+            // 
+            this.tablePanel1.SetColumn(this.tablePanel2, 0);
+            this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 34.15F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 58.85F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 17F)});
+            this.tablePanel2.Controls.Add(this.gridControl1);
+            this.tablePanel2.Controls.Add(this.groupControl1);
+            this.tablePanel2.Controls.Add(this.panelControl1);
+            this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel2.Location = new System.Drawing.Point(3, 3);
+            this.tablePanel2.Name = "tablePanel2";
+            this.tablePanel1.SetRow(this.tablePanel2, 0);
+            this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel2.Size = new System.Drawing.Size(1107, 221);
+            this.tablePanel2.TabIndex = 1;
+            // 
             // groupControl1
             // 
-            this.tablePanel1.SetColumn(this.groupControl1, 0);
-            this.groupControl1.Controls.Add(this.panelControl1);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.tablePanel2.SetColumn(this.groupControl1, 0);
+            this.groupControl1.Controls.Add(this.lkKhachHang);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.tablePanel1.SetRow(this.groupControl1, 0);
-            this.groupControl1.Size = new System.Drawing.Size(1107, 132);
-            this.groupControl1.TabIndex = 1;
+            this.tablePanel2.SetRow(this.groupControl1, 0);
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(338, 215);
+            this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // lkKhachHang
+            // 
+            this.lkKhachHang.Location = new System.Drawing.Point(5, 25);
+            this.lkKhachHang.Name = "lkKhachHang";
+            this.lkKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_KhachHang", "Mã khách hàng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenKhachHang", "Tên khách hàng")});
+            this.lkKhachHang.Properties.NullText = "";
+            this.lkKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lkKhachHang.Size = new System.Drawing.Size(308, 24);
+            this.lkKhachHang.TabIndex = 0;
             // 
             // panelControl1
             // 
+            this.tablePanel2.SetColumn(this.panelControl1, 2);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.ltbTien);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(908, 28);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(939, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(178, 89);
-            this.panelControl1.TabIndex = 3;
+            this.tablePanel2.SetRow(this.panelControl1, 0);
+            this.panelControl1.Size = new System.Drawing.Size(165, 215);
+            this.panelControl1.TabIndex = 4;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(19, 59);
+            this.labelControl3.Location = new System.Drawing.Point(19, 76);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 17);
             this.labelControl3.TabIndex = 3;
@@ -123,7 +166,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 33);
+            this.labelControl2.Location = new System.Drawing.Point(19, 50);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(55, 17);
             this.labelControl2.TabIndex = 3;
@@ -132,7 +175,7 @@
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(93, 11);
+            this.simpleButton1.Location = new System.Drawing.Point(93, 28);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.simpleButton1.Size = new System.Drawing.Size(45, 42);
@@ -144,7 +187,7 @@
             this.ltbTien.Appearance.ForeColor = System.Drawing.Color.Black;
             this.ltbTien.Appearance.Options.UseBackColor = true;
             this.ltbTien.Appearance.Options.UseForeColor = true;
-            this.ltbTien.Location = new System.Drawing.Point(93, 59);
+            this.ltbTien.Location = new System.Drawing.Point(93, 76);
             this.ltbTien.Name = "ltbTien";
             this.ltbTien.Size = new System.Drawing.Size(30, 17);
             this.ltbTien.TabIndex = 1;
@@ -157,34 +200,24 @@
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(144, 5);
+            this.labelControl1.Location = new System.Drawing.Point(130, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(29, 25);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "SL";
             // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(20, 40);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEdit1.Properties.NullText = "";
-            this.textEdit1.Size = new System.Drawing.Size(245, 24);
-            this.textEdit1.TabIndex = 0;
-            // 
             // gcThucAn
             // 
             this.tablePanel1.SetColumn(this.gcThucAn, 0);
             this.gcThucAn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcThucAn.Location = new System.Drawing.Point(3, 141);
+            this.gcThucAn.Location = new System.Drawing.Point(3, 230);
             this.gcThucAn.MainView = this.gvThucAn;
             this.gcThucAn.Name = "gcThucAn";
             this.gcThucAn.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAdd,
             this.btnSub});
             this.tablePanel1.SetRow(this.gcThucAn, 1);
-            this.gcThucAn.Size = new System.Drawing.Size(1107, 353);
+            this.gcThucAn.Size = new System.Drawing.Size(1107, 264);
             this.gcThucAn.TabIndex = 0;
             this.gcThucAn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvThucAn});
@@ -202,6 +235,9 @@
             this.gridColumn8});
             this.gvThucAn.GridControl = this.gcThucAn;
             this.gvThucAn.Name = "gvThucAn";
+            this.gvThucAn.OptionsFind.AlwaysVisible = true;
+            this.gvThucAn.OptionsFind.FindNullPrompt = "Nhập món ăn cần thêm..";
+            this.gvThucAn.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -228,7 +264,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Loại thức ăn";
-            this.gridColumn3.FieldName = "TenLoaiThucAn";
+            this.gridColumn3.FieldName = "l.TenLoaiThucAn";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.ReadOnly = true;
@@ -275,6 +311,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnAdd.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnAdd_ButtonClick);
             // 
             // gridColumn6
             // 
@@ -293,6 +330,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSub.Name = "btnSub";
             this.btnSub.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSub.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSub_ButtonClick);
             // 
             // gridColumn8
             // 
@@ -303,6 +341,25 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             this.gridColumn8.Width = 83;
+            // 
+            // gridControl1
+            // 
+            this.tablePanel2.SetColumn(this.gridControl1, 1);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(347, 3);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.tablePanel2.SetRow(this.gridControl1, 0);
+            this.gridControl1.Size = new System.Drawing.Size(586, 215);
+            this.gridControl1.TabIndex = 6;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // frmDatMon
             // 
@@ -315,16 +372,20 @@
             this.Load += new System.EventHandler(this.frmDatMon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
+            this.tablePanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lkKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcThucAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvThucAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,14 +395,6 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraGrid.GridControl gcThucAn;
         private DevExpress.XtraGrid.Views.Grid.GridView gvThucAn;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.LabelControl ltbTien;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LookUpEdit textEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -352,5 +405,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSub;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.Utils.Layout.TablePanel tablePanel2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl ltbTien;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.LookUpEdit lkKhachHang;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

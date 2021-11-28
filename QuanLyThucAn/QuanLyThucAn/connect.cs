@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using DevExpress.XtraGrid;
 
 namespace QuanLyThucAn
 {
@@ -43,6 +44,16 @@ namespace QuanLyThucAn
             conn.Close();
             return check;
         }
+
+        public void LoadDT (GridControl gridControl,string cmd)
+        {
+            DataTable dt = ex_data(cmd);
+            //if (dt != null)
+            //{
+                gridControl.DataSource = dt;
+            //}
+        }
+
 
         public void ex_cmd(string cmd_text)
         {

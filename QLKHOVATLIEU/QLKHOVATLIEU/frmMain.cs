@@ -28,26 +28,26 @@ namespace QLKHOVATLIEU
         public static string  id_user_name ;  // mã người đăng nhập
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Class.Setting_sys.check_log_file("log_login.txt") == false) {
-                var frm = new Dangnhap();
-                this.Hide();
-                frm.Show();
-                timer1.Start();
+            //if (Class.Setting_sys.check_log_file("log_login.txt") == false) {
+            //    var frm = new Dangnhap();
+            //    this.Hide();
+            //    frm.Show();
+            //    timer1.Start();
 
-            }
-            else
-            {
-                foreach(char i in Class.Setting_sys.get_val_log_file("log_login.txt"))
-                {
-                    if( i == ',')
-                    {
-                        id_user_name = Class.Csdl_sys.ex_data_tring(string.Format("select matk from taikhoan where taikhoan = '{0}'", id_user_name));
-                        break;
-                    }
-                    id_user_name += i.ToString().Trim();
-                }
-            }
-            name_login.Text = Class.Csdl_sys.ex_data_tring(string.Format("select tentk from taikhoan where matk = '{0}'", id_user_name));
+            //}
+            //else
+            //{
+            //    foreach(char i in Class.Setting_sys.get_val_log_file("log_login.txt"))
+            //    {
+            //        if( i == ',')
+            //        {
+            //            id_user_name = Class.Csdl_sys.ex_data_tring(string.Format("select matk from taikhoan where taikhoan = '{0}'", id_user_name));
+            //            break;
+            //        }
+            //        id_user_name += i.ToString().Trim();
+            //    }
+            //}
+            //name_login.Text = Class.Csdl_sys.ex_data_tring(string.Format("select tentk from taikhoan where matk = '{0}'", id_user_name));
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
