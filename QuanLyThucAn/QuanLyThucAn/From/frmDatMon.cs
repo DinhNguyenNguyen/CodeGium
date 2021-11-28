@@ -111,7 +111,29 @@ namespace QuanLyThucAn.From
             }
             else
             {
+                string id = conn.creatId("TM", "select * from ttpb");
+                foreach (DataRow dr in dtOrther.Rows)
+                {
+                   // conn.creatId();
+                   
+                string madaoAn =    dr["MaMonAn"].ToString(),
+                       soluong = dr["SoLuong"].ToString(),
+                       thanhtien = dr["ThanhTien"].ToString();
+                    try
+                    {
+                        conn.ex_cmd(string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong));
+                        textEdit1.Text += string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong);
 
+
+                    }
+                    catch(Exception) { }
+                }
+                conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}',{2},'{3}')", id, frmLogin.mataikhoan, lb_thanhtien.Text,DateTime.Now.ToString("yyyy/MM/dd")));
+                
+                if(XtraMessageBox.Show("Lập phiêu thành công\nBạn có muốn in phiếu không ?","Hệ thống",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    set_sys.mess("In cc có lm cái report đâu in , in vô cl à =)");
+                }
             }
         }
       

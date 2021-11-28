@@ -61,7 +61,7 @@ namespace QuanLyThucAn
             conn.Open();
             try
             {
-                cmd = new MySqlCommand(cmd_text, connect_db());
+                cmd = new MySqlCommand(cmd_text, conn);
                 cmd.ExecuteNonQuery();     
             }
             catch (Exception ex)

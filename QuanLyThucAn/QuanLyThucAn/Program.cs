@@ -18,7 +18,7 @@ namespace QuanLyThucAn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDatMon());
+            Application.Run(new frmLogin());
         }
     }
 }
