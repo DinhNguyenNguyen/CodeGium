@@ -33,6 +33,8 @@
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lb_thanhtien = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btn_chonDa = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -51,8 +53,6 @@
             this.btn_DatMon = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btn_chondoan = new DevExpress.XtraEditors.SimpleButton();
-            this.lb_thanhtien = new DevExpress.XtraEditors.LabelControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
@@ -75,12 +75,11 @@
             this.tablePanel1.Controls.Add(this.tablePanel2);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Margin = new System.Windows.Forms.Padding(5);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 434.3333F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1809, 760);
+            this.tablePanel1.Size = new System.Drawing.Size(849, 494);
             this.tablePanel1.TabIndex = 0;
             // 
             // tablePanel2
@@ -92,13 +91,12 @@
             this.tablePanel2.Controls.Add(this.panelControl2);
             this.tablePanel2.Controls.Add(this.panelControl1);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(5, 5);
-            this.tablePanel2.Margin = new System.Windows.Forms.Padding(5);
+            this.tablePanel2.Location = new System.Drawing.Point(3, 3);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel1.SetRow(this.tablePanel2, 0);
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel2.Size = new System.Drawing.Size(1799, 424);
+            this.tablePanel2.Size = new System.Drawing.Size(843, 278);
             this.tablePanel2.TabIndex = 1;
             // 
             // panelControl2
@@ -112,59 +110,80 @@
             this.panelControl2.Controls.Add(this.btn_thanhtoan);
             this.panelControl2.Controls.Add(this.lkkh);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl2.Name = "panelControl2";
             this.tablePanel2.SetRow(this.panelControl2, 0);
-            this.panelControl2.Size = new System.Drawing.Size(329, 418);
+            this.panelControl2.Size = new System.Drawing.Size(153, 274);
             this.panelControl2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textBox1.Location = new System.Drawing.Point(69, 121);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 2);
+            this.textBox1.TabIndex = 7;
+            // 
+            // lb_thanhtien
+            // 
+            this.lb_thanhtien.Location = new System.Drawing.Point(69, 107);
+            this.lb_thanhtien.Name = "lb_thanhtien";
+            this.lb_thanhtien.Size = new System.Drawing.Size(22, 17);
+            this.lb_thanhtien.TabIndex = 13;
+            this.lb_thanhtien.Text = "null";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(7, 7);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5);
+            this.labelControl2.Location = new System.Drawing.Point(4, 5);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(119, 26);
+            this.labelControl2.Size = new System.Drawing.Size(78, 17);
             this.labelControl2.TabIndex = 12;
             this.labelControl2.Text = "Khách hàng";
             // 
             // btn_chonDa
             // 
-            this.btn_chonDa.Location = new System.Drawing.Point(7, 94);
+            this.btn_chonDa.Location = new System.Drawing.Point(4, 61);
+            this.btn_chonDa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_chonDa.Name = "btn_chonDa";
-            this.btn_chonDa.Size = new System.Drawing.Size(155, 34);
+            this.btn_chonDa.Size = new System.Drawing.Size(95, 22);
             this.btn_chonDa.TabIndex = 11;
             this.btn_chonDa.Text = "Chọn đồ ăn";
             this.btn_chonDa.Click += new System.EventHandler(this.btn_chondoan_Click);
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(7, 163);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5);
+            this.labelControl3.Location = new System.Drawing.Point(4, 107);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(105, 26);
+            this.labelControl3.Size = new System.Drawing.Size(68, 17);
             this.labelControl3.TabIndex = 10;
             this.labelControl3.Text = "Tổng tiền: ";
             // 
             // btn_thanhtoan
             // 
             this.btn_thanhtoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_thanhtoan.ImageOptions.Image")));
-            this.btn_thanhtoan.Location = new System.Drawing.Point(16, 208);
-            this.btn_thanhtoan.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_thanhtoan.Location = new System.Drawing.Point(10, 136);
             this.btn_thanhtoan.Name = "btn_thanhtoan";
             this.btn_thanhtoan.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_thanhtoan.Size = new System.Drawing.Size(42, 43);
+            this.btn_thanhtoan.Size = new System.Drawing.Size(26, 28);
             this.btn_thanhtoan.TabIndex = 9;
             this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click_2);
             // 
             // lkkh
             // 
-            this.lkkh.Location = new System.Drawing.Point(7, 38);
+            this.lkkh.Location = new System.Drawing.Point(4, 25);
+            this.lkkh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lkkh.Name = "lkkh";
             this.lkkh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkkh.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_KhachHang", "Mã khách hàng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenKhachHang", "Tên khách hàng")});
             this.lkkh.Properties.DisplayMember = "TenKhachHang";
             this.lkkh.Properties.ValueMember = "id_KhachHang";
-            this.lkkh.Size = new System.Drawing.Size(255, 34);
+            this.lkkh.Size = new System.Drawing.Size(157, 24);
             this.lkkh.TabIndex = 6;
             // 
             // panelControl1
@@ -172,22 +191,19 @@
             this.tablePanel2.SetColumn(this.panelControl1, 1);
             this.panelControl1.Controls.Add(this.gc_bill_thucan);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(340, 5);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Location = new System.Drawing.Point(160, 3);
             this.panelControl1.Name = "panelControl1";
             this.tablePanel2.SetRow(this.panelControl1, 0);
-            this.panelControl1.Size = new System.Drawing.Size(1454, 414);
+            this.panelControl1.Size = new System.Drawing.Size(680, 272);
             this.panelControl1.TabIndex = 4;
             // 
             // gc_bill_thucan
             // 
             this.gc_bill_thucan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_bill_thucan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
             this.gc_bill_thucan.Location = new System.Drawing.Point(2, 2);
             this.gc_bill_thucan.MainView = this.gv_bill_thucan;
-            this.gc_bill_thucan.Margin = new System.Windows.Forms.Padding(5);
             this.gc_bill_thucan.Name = "gc_bill_thucan";
-            this.gc_bill_thucan.Size = new System.Drawing.Size(1450, 410);
+            this.gc_bill_thucan.Size = new System.Drawing.Size(676, 268);
             this.gc_bill_thucan.TabIndex = 6;
             this.gc_bill_thucan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_bill_thucan});
@@ -199,8 +215,6 @@
             this.gridColumn2,
             this.gridColumn4,
             this.gridColumn3});
-            this.gv_bill_thucan.DetailHeight = 535;
-            this.gv_bill_thucan.FixedLineWidth = 3;
             this.gv_bill_thucan.GridControl = this.gc_bill_thucan;
             this.gv_bill_thucan.Name = "gv_bill_thucan";
             this.gv_bill_thucan.OptionsView.ShowGroupPanel = false;
@@ -209,41 +223,41 @@
             // 
             this.gridColumn1.Caption = "Tên món ăn";
             this.gridColumn1.FieldName = "TenMonAn";
-            this.gridColumn1.MinWidth = 30;
+            this.gridColumn1.MinWidth = 18;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 112;
+            this.gridColumn1.Width = 69;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Số Lượng";
             this.gridColumn2.FieldName = "SoLuong";
-            this.gridColumn2.MinWidth = 30;
+            this.gridColumn2.MinWidth = 18;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 112;
+            this.gridColumn2.Width = 69;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Giá";
             this.gridColumn4.FieldName = "Gia";
-            this.gridColumn4.MinWidth = 30;
+            this.gridColumn4.MinWidth = 18;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 112;
+            this.gridColumn4.Width = 69;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Thành tiền";
             this.gridColumn3.FieldName = "ThanhTien";
-            this.gridColumn3.MinWidth = 30;
+            this.gridColumn3.MinWidth = 18;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 112;
+            this.gridColumn3.Width = 69;
             // 
             // timer1
             // 
@@ -297,31 +311,12 @@
             this.btn_chondoan.TabIndex = 4;
             this.btn_chondoan.Click += new System.EventHandler(this.btn_chondoan_Click);
             // 
-            // lb_thanhtien
-            // 
-            this.lb_thanhtien.Location = new System.Drawing.Point(112, 163);
-            this.lb_thanhtien.Margin = new System.Windows.Forms.Padding(5);
-            this.lb_thanhtien.Name = "lb_thanhtien";
-            this.lb_thanhtien.Size = new System.Drawing.Size(32, 26);
-            this.lb_thanhtien.TabIndex = 13;
-            this.lb_thanhtien.Text = "null";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(112, 185);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 1);
-            this.textBox1.TabIndex = 7;
-            // 
             // frmDatMon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1809, 760);
+            this.ClientSize = new System.Drawing.Size(849, 494);
             this.Controls.Add(this.tablePanel1);
-            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDatMon";
             this.Text = "Đặt món";
             this.Load += new System.EventHandler(this.frmDatMon_Load);

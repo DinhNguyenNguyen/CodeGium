@@ -394,3 +394,5 @@ D:\Code\C#\WF\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn
 D:\Code\C#\WF\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.pdb
 D:\Code\C#\WF\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.PickMonAn.resources
 D:\Code\C#\WF\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Console.PickSL.resources
+F:\GitHub\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Console.PickSL.resources
+F:\GitHub\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.PickMonAn.resources
