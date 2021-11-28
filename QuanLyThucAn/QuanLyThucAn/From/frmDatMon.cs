@@ -18,7 +18,6 @@ namespace QuanLyThucAn.From
             InitializeComponent();
         }
         connect conn = new connect();
-        string sqlMonAn = "select id_ThucAn , TenThucAn ,l.TenLoaiThucAn, gia, url from doan a, loaidoan l where l.id_loaithucan = a.id_loaithucan";
         string sqlKH = "SELECT * FROM khachhang";
 
         DataTable dtOrther;
@@ -29,37 +28,38 @@ namespace QuanLyThucAn.From
             DataTable dt = conn.ex_data(sqlKH);
             if (dt != null)
             {
-                lkKhachHang.Properties.DataSource = dt;
-                lkKhachHang.Properties.DisplayMember = "TenKhachHang";
-                lkKhachHang.Properties.ValueMember = "id_KhachHang";
+                lkkh.Properties.DataSource = dt;
+                lkkh.Properties.DisplayMember = "TenKhachHang";
+                lkkh.Properties.ValueMember = "id_KhachHang";
             }
         }
 
         private void createDTOT()
         {
             dtOrther = new DataTable();
-            dtOrther.Columns.Add("id_ThucAn");
-            dtOrther.Columns.Add("TenThucAn");
-            dtOrther.Columns.Add("gia");
-            //dtOrther.Columns["gia"].DataType = typeof(Int32);
-            dtOrther.Columns.Add("soluong");
-            //dtOrther.Columns["soluong"].DataType = typeof(Int32);
-            dtOrther.Columns.Add("thanhtien");
-            //dtOrther.Columns["thanhtien"].DataType = typeof(Int32);
+            dtOrther.Columns.Add("MaMonAn",typeof(String));
+            dtOrther.Columns.Add("TenMonAn", typeof(String));
+            dtOrther.Columns.Add("SoLuong", typeof(String));
+            dtOrther.Columns.Add("Gia", typeof(String));
+            dtOrther.Columns.Add("ThanhTien", typeof(String));
         }
-        private void loadTA()
+        DataTable add_val(string ma , string ten , string soluong , string gia , string thanhtien)
         {
-            DataTable dt = conn.ex_data(sqlMonAn);
-            if(dt!= null)
-            {
-                gcThucAn.DataSource = dt;
-            }
+            DataRow dr = dtOrther.NewRow();
+            dr["MaMonAn"] = ma;
+            dr["TenMonAn"] = ten;
+            dr["SoLuong"] = soluong;
+            dr["Gia"] = gia;
+            dr["ThanhTien"] = thanhtien;
+            dtOrther.Rows.Add(dr);
+            return dtOrther;
         }
+       
         private void frmDatMon_Load(object sender, EventArgs e)
         {
-            loadTA();
             loadLKKH();
             createDTOT();
+
         }
 
         private void btnSub_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -67,31 +67,54 @@ namespace QuanLyThucAn.From
 
         }
 
-        private void btnAdd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void btn_DatMon_Click(object sender, EventArgs e)
         {
-            int row_index = gvThucAn.FocusedRowHandle;
-            if ((lkKhachHang.EditValue == null) || (lkKhachHang.EditValue.ToString().Equals("")))
-            {
-                XtraMessageBox.Show("Bạn chưa chọn khách hàng\r\nVui lòng chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            DataRow dr = dtOrther.NewRow();
-            dr["id_ThucAn"] = gvThucAn.GetRowCellValue(row_index, "id_ThucAn").ToString(); 
-            dr["TenThucAn"] = gvThucAn.GetRowCellValue(row_index, "TenThucAn").ToString(); 
-            dr["gia"] = gvThucAn.GetRowCellValue(row_index, "gia").ToString();
-            foreach(DataRow dtr in dtOrther.Rows)
-            {
-                if(dtr["id_ThucAn"].Equals(gvThucAn.GetRowCellValue(row_index, "id_ThucAn").ToString()))
-                {
-                    dr["soluong"] = Int32.Parse(dr["SoLuong"].ToString());
-                    //dr["Soluong"]= Int32.Parse(dr["soLuong"].ToString())+1;
-                }
-            }
-            dr["thanhtien"] = 0;
-            dtOrther.Rows.Add(dr);
-
-            gridControl1.DataSource = dtOrther;
             
         }
+        PickMonAn frm_pickMonAn;
+       public static List<string> list_doAn = new List<string>();
+        private void btn_chondoan_Click(object sender, EventArgs e)
+        {
+            frm_pickMonAn = new PickMonAn();
+            frm_pickMonAn.ShowDialog();
+            timer1.Start();
+        }
+        int thanhtien;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string maDoAn = frm_pickMonAn.mada;
+            if (maDoAn != null)
+            {
+                if(list_doAn.IndexOf(maDoAn) < 0)
+                {
+                    list_doAn.Add(maDoAn);
+                    string tendoAn = conn.ex_data_string(string.Format("select tenthucan from doan where id_thucan = '{0}'", maDoAn));
+                    int gia = int.Parse(conn.ex_data_string(string.Format("select gia from doan where id_thucan = '{0}'", maDoAn)));
+                    int thanhthien_t = gia   * int.Parse(frm_pickMonAn.soluong);
+                    thanhtien += thanhthien_t;
+                    string soluong = frm_pickMonAn.soluong;
+                    lb_thanhtien.Text = thanhtien.ToString();
+                    gc_bill_thucan.DataSource = add_val(maDoAn,tendoAn,soluong,gia.ToString(),thanhthien_t.ToString());
+                    timer1.Stop();
+                }
+            }
+
+        }
+
+    
+
+        private void btn_thanhtoan_Click_2(object sender, EventArgs e)
+        {
+            if ((lkkh.EditValue == null) || (lkkh.EditValue.ToString().Equals("")))
+            {
+                set_sys.mess("Bạn chưa chọn khách hàng\r\nVui lòng chọn!");
+            }
+            else
+            {
+
+            }
+        }
+      
     }
+    
 }

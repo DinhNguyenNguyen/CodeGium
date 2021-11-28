@@ -82,15 +82,21 @@ namespace QuanLyThucAn
             da.Fill(dt);
             return dt;
         }
-        public string ex_data_string(string cmd_text)
+        public string ex_data_string(string str)
         {
-            MySqlConnection conn = connect_db();
-            conn.Open();
-            cmd = new MySqlCommand(cmd_text, connect_db());
-            return cmd.ExecuteScalar().ToString();
+            string data;
+            using (MySqlConnection conn = connect_db())
+            {
+                conn.Open();
+                cmd = new MySqlCommand(str, conn);
+                data = cmd.ExecuteScalar().ToString();
+                conn.Close();
+                return data;
+            }
+
         }
 
-        public string creatId(string preFix, string sql)
+            public string creatId(string preFix, string sql)
         {
             string id = "";
             int countRow = -1;
