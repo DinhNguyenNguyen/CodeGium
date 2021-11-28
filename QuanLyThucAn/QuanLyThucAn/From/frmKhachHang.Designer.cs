@@ -137,6 +137,7 @@
             // 
             this.txtKH.Location = new System.Drawing.Point(133, 25);
             this.txtKH.Name = "txtKH";
+            this.txtKH.Properties.ReadOnly = true;
             this.txtKH.Size = new System.Drawing.Size(269, 24);
             this.txtKH.TabIndex = 3;
             // 
@@ -195,6 +196,7 @@
             this.btnLamMoi.Size = new System.Drawing.Size(101, 42);
             this.btnLamMoi.TabIndex = 0;
             this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -203,6 +205,7 @@
             this.btnXoa.Size = new System.Drawing.Size(101, 42);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xoá";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -211,6 +214,7 @@
             this.btnSua.Size = new System.Drawing.Size(101, 42);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -219,6 +223,7 @@
             this.btnThem.Size = new System.Drawing.Size(101, 42);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtNgaySinh
             // 
@@ -229,12 +234,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgaySinh.Properties.DisplayFormat.FormatString = "";
+            this.txtNgaySinh.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.txtNgaySinh.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtNgaySinh.Properties.EditFormat.FormatString = "";
             this.txtNgaySinh.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNgaySinh.Properties.Mask.EditMask = "";
-            this.txtNgaySinh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtNgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.txtNgaySinh.Size = new System.Drawing.Size(269, 24);
             this.txtNgaySinh.TabIndex = 3;
             // 
@@ -255,7 +259,10 @@
             // 
             this.gvKhachHang.GridControl = this.gcKhachHang;
             this.gvKhachHang.Name = "gvKhachHang";
+            this.gvKhachHang.OptionsBehavior.Editable = false;
+            this.gvKhachHang.OptionsBehavior.ReadOnly = true;
             this.gvKhachHang.OptionsView.ShowGroupPanel = false;
+            this.gvKhachHang.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvKhachHang_RowClick);
             // 
             // frmKhachHang
             // 
@@ -265,6 +272,7 @@
             this.Controls.Add(this.tablePanel1);
             this.Name = "frmKhachHang";
             this.Text = "Khách hàng";
+            this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

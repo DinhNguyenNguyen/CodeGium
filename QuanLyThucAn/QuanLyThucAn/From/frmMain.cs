@@ -48,7 +48,7 @@ namespace QuanLyThucAn
         }
         private void vc_Load(object sender, EventArgs e)
         {
-            var f = new frmDatMon();
+            var f = new frmHome();
             act_frm(f, f.Text, f.Name);
         }
 

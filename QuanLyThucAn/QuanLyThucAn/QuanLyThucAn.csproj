@@ -85,6 +85,12 @@
     <Compile Include="From\frmDatMon.Designer.cs">
       <DependentUpon>frmDatMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="From\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="From\frmDatMon.resx">
       <DependentUpon>frmDatMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
@@ -175,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ORTHER FOOD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
