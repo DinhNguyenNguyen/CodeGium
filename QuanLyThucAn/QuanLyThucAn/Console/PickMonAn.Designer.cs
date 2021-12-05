@@ -50,7 +50,6 @@ namespace QuanLyThucAn
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSub = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.PickMonAnlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -92,10 +91,8 @@ namespace QuanLyThucAn
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn7,
-            this.gridColumn5,
-            this.gridColumn8});
+            this.gridColumn5});
             this.gvThucAn.DetailHeight = 535;
-            this.gvThucAn.FixedLineWidth = 3;
             this.gvThucAn.GridControl = this.gcThucAn;
             this.gvThucAn.Name = "gvThucAn";
             this.gvThucAn.OptionsFind.AlwaysVisible = true;
@@ -110,9 +107,10 @@ namespace QuanLyThucAn
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 154;
+            this.gridColumn1.Width = 152;
             // 
             // gridColumn2
             // 
@@ -124,7 +122,7 @@ namespace QuanLyThucAn
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 336;
+            this.gridColumn2.Width = 242;
             // 
             // gridColumn3
             // 
@@ -136,7 +134,7 @@ namespace QuanLyThucAn
             this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 330;
+            this.gridColumn3.Width = 238;
             // 
             // gridColumn4
             // 
@@ -148,19 +146,19 @@ namespace QuanLyThucAn
             this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 133;
+            this.gridColumn4.Width = 94;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Ảnh";
-            this.gridColumn7.FieldName = "URL";
+            this.gridColumn7.FieldName = "url";
             this.gridColumn7.MinWidth = 32;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 4;
-            this.gridColumn7.Width = 156;
+            this.gridColumn7.Width = 112;
             // 
             // gridColumn5
             // 
@@ -170,7 +168,7 @@ namespace QuanLyThucAn
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
-            this.gridColumn5.Width = 120;
+            this.gridColumn5.Width = 95;
             // 
             // btnAdd
             // 
@@ -181,17 +179,6 @@ namespace QuanLyThucAn
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnAdd.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnAdd_ButtonClick_1);
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Số lượng";
-            this.gridColumn8.MinWidth = 32;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.OptionsColumn.ReadOnly = true;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 135;
             // 
             // btnSub
             // 
@@ -282,6 +269,14 @@ namespace QuanLyThucAn
         #endregion
 
         private DevExpress.XtraGrid.GridControl gcThucAn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnAdd;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSub;
+        private DevExpress.XtraLayout.LayoutControl PickMonAnlayoutControl1ConvertedLayout;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem gcThucAnitem;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
+        private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraGrid.Views.Grid.GridView gvThucAn;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -289,14 +284,5 @@ namespace QuanLyThucAn
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnAdd;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSub;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraLayout.LayoutControl PickMonAnlayoutControl1ConvertedLayout;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem gcThucAnitem;
-        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
-        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

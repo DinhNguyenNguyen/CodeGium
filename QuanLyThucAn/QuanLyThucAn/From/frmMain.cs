@@ -95,5 +95,10 @@ namespace QuanLyThucAn
         {
             Application.Run(new frmLogin());
         }
+
+        private void aceXemMon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

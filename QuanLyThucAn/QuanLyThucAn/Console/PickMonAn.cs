@@ -19,7 +19,7 @@ namespace QuanLyThucAn
             InitializeComponent();
         }
         connect conn = new connect();
-        string sqlMonAn = "select id_ThucAn , TenThucAn ,l.TenLoaiThucAn, gia, url from doan a, loaidoan l where l.id_loaithucan = a.id_loaithucan";
+        string sqlMonAn = "select id_ThucAn , TenThucAn ,l.TenLoaiThucAn, gia, url as 'cc' from doan a, loaidoan l where l.id_loaithucan = a.id_loaithucan";
        
         private void loadTA()
         {
@@ -27,7 +27,22 @@ namespace QuanLyThucAn
             if (dt != null)
             {
                 gcThucAn.DataSource = dt;
+
             }
+            dt.Columns.Add("url", typeof(byte[]));
+            foreach (DataRow dr in dt.Rows)
+            {
+                Image img = Image.FromFile(string.Format(@"{0}\SRC\Img\{1}", Application.StartupPath, dr["cc"]));
+                dr["url"] = chuyenanh(img);
+                dt.AcceptChanges();
+                dr.SetModified();
+            }
+        }
+        Byte[] chuyenanh(System.Drawing.Image img)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            img.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
         private void btnAdd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -37,6 +52,7 @@ namespace QuanLyThucAn
         public string mada , tenda, soluong;
         private void PickMonAn_Load(object sender, EventArgs e)
         {
+            gridColumn1.Visible = false;
             loadTA();
 
         }

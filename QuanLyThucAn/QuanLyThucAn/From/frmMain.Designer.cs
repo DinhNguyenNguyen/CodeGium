@@ -34,8 +34,8 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace_quanlynhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace_ThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceHeThong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceMonAn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -63,38 +63,39 @@
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(930, 0);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1395, 0);
             this.fluentDesignFormControl1.TabIndex = 7;
             this.fluentDesignFormControl1.TabStop = false;
             // 
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement2,
-            this.accordionControlElement3});
+            this.ace_quanlynhanvien,
+            this.ace_ThongKe,
+            this.aceDangXuat});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Công cụ";
             // 
-            // accordionControlElement2
+            // ace_quanlynhanvien
             // 
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Element2";
+            this.ace_quanlynhanvien.Name = "ace_quanlynhanvien";
+            this.ace_quanlynhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ace_quanlynhanvien.Text = "Quản lý nhân viên";
             // 
-            // accordionControlElement3
+            // ace_ThongKe
             // 
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement3.Text = "Element3";
+            this.ace_ThongKe.Name = "ace_ThongKe";
+            this.ace_ThongKe.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ace_ThongKe.Text = "Thống kê";
             // 
             // aceHeThong
             // 
             this.aceHeThong.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.aceKhachHang,
-            this.aceMonAn,
-            this.aceDangXuat});
+            this.aceMonAn});
             this.aceHeThong.Expanded = true;
             this.aceHeThong.Name = "aceHeThong";
             this.aceHeThong.Text = "Hệ thống";
@@ -147,6 +148,7 @@
             this.aceXemMon.Name = "aceXemMon";
             this.aceXemMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceXemMon.Text = "Xem món";
+            this.aceXemMon.Click += new System.EventHandler(this.aceXemMon_Click);
             // 
             // acePhieuGoiMon
             // 
@@ -163,9 +165,10 @@
             this.aceHeThong,
             this.accordionControlElement1});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(250, 519);
+            this.accordionControl1.Size = new System.Drawing.Size(375, 778);
             this.accordionControl1.TabIndex = 5;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -173,15 +176,16 @@
             // 
             this.Appearance.ForeColor = System.Drawing.Color.White;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(930, 519);
+            this.ClientSize = new System.Drawing.Size(1395, 778);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmMain.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "OTHER FOOD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -208,7 +212,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceMonAn;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceDangXuat;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_quanlynhanvien;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_ThongKe;
     }
 }

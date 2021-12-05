@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.IO;
+using DevExpress.XtraEditors.Repository;
 
 namespace QuanLyThucAn.From
 {
@@ -30,16 +32,34 @@ namespace QuanLyThucAn.From
                 gcLoaiTA.DataSource = dt;
             }
         }
-
+        RepositoryItemPictureEdit pic;
         public void LoadThucAn()
         {
+            pic = new RepositoryItemPictureEdit();
             DataTable dt = conn.ex_data(sqlDoAn);
+            dt.Columns.Add("URLL",typeof(byte[]));
             if (dt != null)
             {
                 gcThucAn.DataSource = dt;
             }
-        }
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["URL"] = string.Format(@"{0}\SRC\Img\{1}", Application.StartupPath,dr["URL"]);
+                Image img = Image.FromFile(dr["URL"].ToString());
+                dr["URLL"] = imageToByteArray(img);
+                dt.AcceptChanges();
+                dr.SetModified();
+            }
 
+           
+            
+        }
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
         public void LoadLoaiTAonTA()
         {
             DataTable dt = conn.ex_data(sqlLoaiTA);
@@ -143,6 +163,7 @@ namespace QuanLyThucAn.From
             txtURL.EditValue = "";
             lukLoaiTA.EditValue = "";
             txtTenTA.Focus();
+            LoadLoaiTAonTA();
         }
 
         private void btnSuaF_Click(object sender, EventArgs e)
@@ -189,7 +210,9 @@ namespace QuanLyThucAn.From
 
         private void btnThemF_Click(object sender, EventArgs e)
         {
-
+            FileInfo fi = new FileInfo(dlg.FileName);
+            string name_file = txtURL.Text;
+            fi.CopyTo(path, true);
             if (txtTenTA.EditValue == null || txtTenTA.EditValue.ToString().Equals(""))
             {
                 XtraMessageBox.Show("Bạn chưa nhập tên thức ăn\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -215,7 +238,7 @@ namespace QuanLyThucAn.From
                 return;
             }
 
-            string sqlU = string.Format("insert doan values('{0}','{1}','{2}','{3}',{4},'{5}')", conn.creatId("TA", sqlDoAn),frmLogin.mataikhoan , lukLoaiTA.EditValue, txtTenTA.EditValue.ToString(), Convert.ToInt32(txtGia.EditValue.ToString()), txtURL.EditValue.ToString());
+            string sqlU = string.Format("insert doan values('{0}','{1}','{2}','{3}',{4},'{5}')", conn.creatId("TA", sqlDoAn),frmLogin.mataikhoan , lukLoaiTA.EditValue, txtTenTA.EditValue.ToString(), Convert.ToInt32(txtGia.EditValue.ToString()),name_file);
 
             if (conn.E_DaTa(sqlU))
             {
@@ -237,16 +260,24 @@ namespace QuanLyThucAn.From
             txtURL.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "URL");
             lukLoaiTA.Text = gvThucAn.GetRowCellValue(e.RowHandle, "id_LoaiThucAn").ToString();
         }
-
+        string path;
+        OpenFileDialog dlg;
         private void txtURL_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
+            dlg = new OpenFileDialog();
             dlg.Title = "Chọn một hình ảnh thức ăn";
             dlg.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                txtURL.Text = dlg.FileName;
-                
+                txtURL.Text = dlg.SafeFileName;
+                string name_file = dlg.SafeFileName;
+               
+                 path =string.Format(@"{0}\SRC\Img\", Application.StartupPath);
+                 if (!Directory.Exists(path))
+                 {
+                     Directory.CreateDirectory(path);
+                 }
+                path = path+name_file;
             }
         }
     }
