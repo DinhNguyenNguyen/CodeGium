@@ -396,3 +396,22 @@ D:\Code\C#\WF\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn
 D:\Code\C#\WF\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Console.PickSL.resources
 F:\GitHub\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Console.PickSL.resources
 F:\GitHub\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.PickMonAn.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\QuanLyThucAn.exe.config
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.exe
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.pdb
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\QuanLyThucAn.exe
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\QuanLyThucAn.pdb
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csprojResolveAssemblyReference.cache
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Console.PickSL.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmDatMon.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmHome.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmKhachHang.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmLoaiTA_ThucAn.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmLogin.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.frmTaiKhoan_ChucVu.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.PickMonAn.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Properties.Resources.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.frmMain.resources
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csproj.GenerateResource.Cache
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.exe.licenses
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\SRC\Img\Trash.cs
