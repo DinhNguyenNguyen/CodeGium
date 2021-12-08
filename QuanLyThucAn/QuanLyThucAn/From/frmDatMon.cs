@@ -54,12 +54,37 @@ namespace QuanLyThucAn.From
             dtOrther.Rows.Add(dr);
             return dtOrther;
         }
-       
+        void load_PhieuBan()
+        {
+            gc_phieuban.DataSource = conn.ex_data("SELECT p.id_PhieuBan , k.TenKhachHang , p.ThanhTien , p.NgayLapPhieu , t.id_taikhoan as 'NguoiLapPhieu' FROM phieuban p , khachhang k , taikhoan t where k.id_KhachHang = p.id_KhachHang and t.id_taikhoan = p.id_TaiKhoan");
+        }
+        DataTable dt;
+        void load_TTPhieuBan(string id_pb)
+        {
+            
+            dt = conn.ex_data(string.Format("select d.TenThucAn , d.gia , d.URL , tt.SoLuong from ttpb tt , phieuban p , doan d where d.id_ThucAn = tt.id_DoAn and p.id_PhieuBan = tt.id_TTPB and tt.id_TTPB = '{0}' ",id_pb));
+            dt.Columns.Add("Anh", typeof(byte[]));
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["Anh"] = cover_img(Image.FromFile(string.Format(@"{0}\SRC\Img\{1}",Application.StartupPath,dr["URL"])));
+                dt.AcceptChanges();
+                dr.SetModified();
+            }
+            gc_ttphieuban.DataSource = dt;
+        }
+        byte[] cover_img(Image img)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
         private void frmDatMon_Load(object sender, EventArgs e)
         {
             loadLKKH();
             createDTOT();
-
+            load_PhieuBan();
+            dt = new DataTable();
+            
         }
 
         private void btnSub_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -82,6 +107,7 @@ namespace QuanLyThucAn.From
         int thanhtien;
         private void timer1_Tick(object sender, EventArgs e)
         {
+           
             string maDoAn = frm_pickMonAn.mada;
             if (maDoAn != null)
             {
@@ -115,26 +141,35 @@ namespace QuanLyThucAn.From
                 foreach (DataRow dr in dtOrther.Rows)
                 {
                    // conn.creatId();
-                   
-                string madaoAn =    dr["MaMonAn"].ToString(),
-                       soluong = dr["SoLuong"].ToString(),
-                       thanhtien = dr["ThanhTien"].ToString();
+
+                    string madaoAn = dr["MaMonAn"].ToString(),
+                           soluong = dr["SoLuong"].ToString(),
+                           thanhtien = dr["ThanhTien"].ToString();
                     try
                     {
                         conn.ex_cmd(string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong));
-                        textEdit1.Text += string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong);
+                        //textEdit1.Text += string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong);
 
 
                     }
                     catch(Exception) { }
                 }
-                conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}',{2},'{3}')", id, frmLogin.mataikhoan, lb_thanhtien.Text,DateTime.Now.ToString("yyyy/MM/dd")));
+              //  XtraMessageBox.Show(lkkh.EditValue.ToString());
+                conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
                 
                 if(XtraMessageBox.Show("Lập phiêu thành công\nBạn có muốn in phiếu không ?","Hệ thống",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     set_sys.mess("In cc có lm cái report đâu in , in vô cl à =)");
                 }
+                load_PhieuBan();
+                loadLKKH();
+                gc_ttphieuban.DataSource = null;
             }
+        }
+
+        private void gv_phieuban_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            load_TTPhieuBan(gv_phieuban.GetRowCellDisplayText(e.RowHandle, "id_PhieuBan"));
         }
       
     }

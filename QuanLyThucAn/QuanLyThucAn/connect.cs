@@ -59,15 +59,15 @@ namespace QuanLyThucAn
         {
             MySqlConnection conn = connect_db();
             conn.Open();
-            try
-            {
+            //try
+            //{
                 cmd = new MySqlCommand(cmd_text, conn);
                 cmd.ExecuteNonQuery();     
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XtraMessageBox.Show(ex.Message);
+            //}
              
             conn.Close();
             

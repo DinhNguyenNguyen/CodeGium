@@ -32,10 +32,8 @@ namespace QuanLyThucAn.From
                 gcLoaiTA.DataSource = dt;
             }
         }
-        RepositoryItemPictureEdit pic;
         public void LoadThucAn()
         {
-            pic = new RepositoryItemPictureEdit();
             DataTable dt = conn.ex_data(sqlDoAn);
             dt.Columns.Add("URLL",typeof(byte[]));
             if (dt != null)
