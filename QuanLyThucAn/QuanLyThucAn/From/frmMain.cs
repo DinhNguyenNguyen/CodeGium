@@ -98,7 +98,8 @@ namespace QuanLyThucAn
 
         private void aceXemMon_Click(object sender, EventArgs e)
         {
-
+            var frm = new FrmDoAn();
+            act_frm(frm, frm.Text, frm.Name);
         }
 
         private void ace_quanlynhanvien_Click(object sender, EventArgs e)

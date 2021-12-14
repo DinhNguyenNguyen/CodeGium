@@ -28,72 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            this.tileViewColumn1 = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.tileViewColumn3 = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.tileViewColumn2 = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gc_DA = new DevExpress.XtraGrid.GridControl();
+            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.gc_loadDA = new DevExpress.XtraGrid.GridControl();
+            this.gv_loaiDA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gc_DA = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cV_DA = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
-            this.tablePanel1.SuspendLayout();
+            this.btn_lm = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_DA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cV_DA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_loadDA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_loaiDA)).BeginInit();
             this.SuspendLayout();
             // 
-            // tablePanel1
+            // tileViewColumn1
             // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Controls.Add(this.gc_DA);
-            this.tablePanel1.Controls.Add(this.panelControl1);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 168.6666F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1142, 428);
-            this.tablePanel1.TabIndex = 0;
+            this.tileViewColumn1.FieldName = "gia";
+            this.tileViewColumn1.MinWidth = 30;
+            this.tileViewColumn1.Name = "tileViewColumn1";
+            this.tileViewColumn1.Visible = true;
+            this.tileViewColumn1.VisibleIndex = 0;
+            this.tileViewColumn1.Width = 112;
+            // 
+            // tileViewColumn3
+            // 
+            this.tileViewColumn3.FieldName = "tenthucan";
+            this.tileViewColumn3.MinWidth = 30;
+            this.tileViewColumn3.Name = "tileViewColumn3";
+            this.tileViewColumn3.Visible = true;
+            this.tileViewColumn3.VisibleIndex = 2;
+            this.tileViewColumn3.Width = 112;
+            // 
+            // tileViewColumn2
+            // 
+            this.tileViewColumn2.FieldName = "url";
+            this.tileViewColumn2.MinWidth = 30;
+            this.tileViewColumn2.Name = "tileViewColumn2";
+            this.tileViewColumn2.Visible = true;
+            this.tileViewColumn2.VisibleIndex = 1;
+            this.tileViewColumn2.Width = 112;
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.CustomHeight = 200;
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            this.repositoryItemPictureEdit1.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.repositoryItemPictureEdit1.SvgImageSize = new System.Drawing.Size(200, 200);
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.gridControl1);
-            this.panelControl1.Location = new System.Drawing.Point(3, 0);
+            this.panelControl1.Controls.Add(this.btn_lm);
+            this.panelControl1.Controls.Add(this.gc_DA);
+            this.panelControl1.Controls.Add(this.gc_loadDA);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1136, 167);
+            this.panelControl1.Size = new System.Drawing.Size(1142, 428);
             this.panelControl1.TabIndex = 0;
             // 
-            // gridControl1
+            // gc_DA
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(591, 163);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gc_DA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gc_DA.Location = new System.Drawing.Point(5, 171);
+            this.gc_DA.MainView = this.tileView1;
+            this.gc_DA.Name = "gc_DA";
+            this.gc_DA.Size = new System.Drawing.Size(1132, 252);
+            this.gc_DA.TabIndex = 1;
+            this.gc_DA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.tileView1});
             // 
-            // gridView1
+            // tileView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.tileViewColumn1,
+            this.tileViewColumn2,
+            this.tileViewColumn3});
+            this.tileView1.GridControl = this.gc_DA;
+            this.tileView1.Name = "tileView1";
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(416, 254);
+            this.tileView1.OptionsTiles.RowCount = 0;
+            tableRowDefinition4.Length.Value = 161D;
+            tableRowDefinition5.Length.Value = 39D;
+            tableRowDefinition6.Length.Value = 38D;
+            this.tileView1.TileRows.Add(tableRowDefinition4);
+            this.tileView1.TileRows.Add(tableRowDefinition5);
+            this.tileView1.TileRows.Add(tableRowDefinition6);
+            tileViewItemElement4.Column = this.tileViewColumn1;
+            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement4.RowIndex = 2;
+            tileViewItemElement4.Text = "tileViewColumn1";
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement5.Column = this.tileViewColumn3;
+            tileViewItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement5.RowIndex = 1;
+            tileViewItemElement5.Text = "tileViewColumn3";
+            tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.Column = this.tileViewColumn2;
+            tileViewItemElement6.Height = 300;
+            tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement6.Text = "tileViewColumn2";
+            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileView1.TileTemplate.Add(tileViewItemElement4);
+            this.tileView1.TileTemplate.Add(tileViewItemElement5);
+            this.tileView1.TileTemplate.Add(tileViewItemElement6);
+            // 
+            // gc_loadDA
+            // 
+            this.gc_loadDA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gc_loadDA.Location = new System.Drawing.Point(2, 2);
+            this.gc_loadDA.MainView = this.gv_loaiDA;
+            this.gc_loadDA.Name = "gc_loadDA";
+            this.gc_loadDA.Size = new System.Drawing.Size(915, 163);
+            this.gc_loadDA.TabIndex = 0;
+            this.gc_loadDA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_loaiDA});
+            // 
+            // gv_loaiDA
+            // 
+            this.gv_loaiDA.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gv_loaiDA.GridControl = this.gc_loadDA;
+            this.gv_loaiDA.Name = "gv_loaiDA";
+            this.gv_loaiDA.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gv_loaiDA.OptionsBehavior.Editable = false;
+            this.gv_loaiDA.OptionsSelection.MultiSelect = true;
+            this.gv_loaiDA.OptionsView.ShowGroupPanel = false;
+            this.gv_loaiDA.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gv_loaiDA_RowCellClick);
             // 
             // gridColumn1
             // 
@@ -115,96 +195,47 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 112;
             // 
-            // gc_DA
+            // btn_lm
             // 
-            this.tablePanel1.SetColumn(this.gc_DA, 0);
-            this.gc_DA.Location = new System.Drawing.Point(3, 172);
-            this.gc_DA.MainView = this.cV_DA;
-            this.gc_DA.Name = "gc_DA";
-            this.tablePanel1.SetRow(this.gc_DA, 1);
-            this.gc_DA.Size = new System.Drawing.Size(1136, 253);
-            this.gc_DA.TabIndex = 1;
-            this.gc_DA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2,
-            this.cV_DA,
-            this.tileView1});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gc_DA;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // cV_DA
-            // 
-            this.cV_DA.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn4,
-            this.gridColumn5});
-            this.cV_DA.GridControl = this.gc_DA;
-            this.cV_DA.Name = "cV_DA";
-            this.cV_DA.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
-            // 
-            // tileView1
-            // 
-            this.tileView1.GridControl = this.gc_DA;
-            this.tileView1.Name = "tileView1";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "tên món";
-            this.gridColumn4.FieldName = "tenthucan";
-            this.gridColumn4.MinWidth = 30;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            this.gridColumn4.Width = 112;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "giá";
-            this.gridColumn5.FieldName = "gia";
-            this.gridColumn5.MinWidth = 30;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 112;
+            this.btn_lm.Location = new System.Drawing.Point(923, 5);
+            this.btn_lm.Name = "btn_lm";
+            this.btn_lm.Size = new System.Drawing.Size(195, 46);
+            this.btn_lm.TabIndex = 4;
+            this.btn_lm.Text = "Làm mới";
+            this.btn_lm.Click += new System.EventHandler(this.btn_lm_Click);
             // 
             // FrmDoAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 428);
-            this.Controls.Add(this.tablePanel1);
+            this.Controls.Add(this.panelControl1);
             this.Name = "FrmDoAn";
             this.Text = "FrmDoAn";
             this.Load += new System.EventHandler(this.FrmDoAn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
-            this.tablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_DA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cV_DA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_loadDA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_loaiDA)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private DevExpress.XtraGrid.GridControl gc_DA;
-        private DevExpress.XtraGrid.Views.Card.CardView cV_DA;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_loadDA;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_loaiDA;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraGrid.GridControl gc_DA;
+        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn tileViewColumn1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn tileViewColumn2;
+        private DevExpress.XtraGrid.Columns.TileViewColumn tileViewColumn3;
+        private DevExpress.XtraEditors.SimpleButton btn_lm;
     }
 }

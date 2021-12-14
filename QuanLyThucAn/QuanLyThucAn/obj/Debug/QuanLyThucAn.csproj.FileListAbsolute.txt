@@ -530,3 +530,4 @@ D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\bin\Debug\ru\
 D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csprojAssemblyReference.cache
 D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csproj.CoreCompileInputs.cache
 D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csproj.CopyComplete
+D:\Code\C#\WF\Code Dum\DoAnCuaConDuyLuan\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.FrmDoAn.resources
