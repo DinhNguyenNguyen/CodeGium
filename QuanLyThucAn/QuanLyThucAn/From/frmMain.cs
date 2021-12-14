@@ -100,5 +100,11 @@ namespace QuanLyThucAn
         {
 
         }
+
+        private void ace_quanlynhanvien_Click(object sender, EventArgs e)
+        {
+            var frm = new frmTaiKhoan_ChucVu();
+            act_frm(frm,frm.Text,frm.Name);
+        }
     }
 }

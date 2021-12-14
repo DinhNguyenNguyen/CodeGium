@@ -36,10 +36,10 @@
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_quanlynhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_ThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceDangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceHeThong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceMonAn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.aceDangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceChucNang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aecDatMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceXemMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -84,12 +84,21 @@
             this.ace_quanlynhanvien.Name = "ace_quanlynhanvien";
             this.ace_quanlynhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_quanlynhanvien.Text = "Quản lý nhân viên";
+            this.ace_quanlynhanvien.Click += new System.EventHandler(this.ace_quanlynhanvien_Click);
             // 
             // ace_ThongKe
             // 
             this.ace_ThongKe.Name = "ace_ThongKe";
             this.ace_ThongKe.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_ThongKe.Text = "Thống kê";
+            // 
+            // aceDangXuat
+            // 
+            this.aceDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("aceDangXuat.ImageOptions.Image")));
+            this.aceDangXuat.Name = "aceDangXuat";
+            this.aceDangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceDangXuat.Text = "Đăng xuất";
+            this.aceDangXuat.Click += new System.EventHandler(this.aceDangXuat_Click);
             // 
             // aceHeThong
             // 
@@ -115,14 +124,6 @@
             this.aceMonAn.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceMonAn.Text = "Món ăn";
             this.aceMonAn.Click += new System.EventHandler(this.aceMonAn_Click_1);
-            // 
-            // aceDangXuat
-            // 
-            this.aceDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("aceDangXuat.ImageOptions.Image")));
-            this.aceDangXuat.Name = "aceDangXuat";
-            this.aceDangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.aceDangXuat.Text = "Đăng xuất";
-            this.aceDangXuat.Click += new System.EventHandler(this.aceDangXuat_Click);
             // 
             // aceChucNang
             // 

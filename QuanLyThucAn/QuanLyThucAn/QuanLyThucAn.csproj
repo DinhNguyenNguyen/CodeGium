@@ -92,6 +92,12 @@
     <Compile Include="From\frmDatMon.Designer.cs">
       <DependentUpon>frmDatMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="From\FrmDoAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmDoAn.Designer.cs">
+      <DependentUpon>FrmDoAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmDatMon.resx">
       <DependentUpon>frmDatMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmDoAn.resx">
+      <DependentUpon>FrmDoAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

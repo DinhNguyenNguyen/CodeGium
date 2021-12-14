@@ -164,6 +164,7 @@ namespace QuanLyThucAn.From
                 load_PhieuBan();
                 loadLKKH();
                 gc_ttphieuban.DataSource = null;
+                gc_bill_thucan.DataSource = null;
             }
         }
 
