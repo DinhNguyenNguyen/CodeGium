@@ -47,6 +47,7 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_lamMoi = new DevExpress.XtraEditors.SimpleButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lb_thanhtien = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -264,8 +265,8 @@
             // 
             this.tablePanel1.SetColumn(this.tablePanel2, 0);
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20.11F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 87.83F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 23.63F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 84.31F)});
             this.tablePanel2.Controls.Add(this.panelControl2);
             this.tablePanel2.Controls.Add(this.panelControl1);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -281,6 +282,7 @@
             // panelControl2
             // 
             this.tablePanel2.SetColumn(this.panelControl2, 0);
+            this.panelControl2.Controls.Add(this.btn_lamMoi);
             this.panelControl2.Controls.Add(this.textBox1);
             this.panelControl2.Controls.Add(this.lb_thanhtien);
             this.panelControl2.Controls.Add(this.labelControl2);
@@ -292,8 +294,20 @@
             this.panelControl2.Location = new System.Drawing.Point(3, 3);
             this.panelControl2.Name = "panelControl2";
             this.tablePanel2.SetRow(this.panelControl2, 0);
-            this.panelControl2.Size = new System.Drawing.Size(249, 348);
+            this.panelControl2.Size = new System.Drawing.Size(294, 348);
             this.panelControl2.TabIndex = 5;
+            // 
+            // btn_lamMoi
+            // 
+            this.btn_lamMoi.ImageOptions.Image = global::QuanLyThucAn.Properties.Resources.refresh2_16x16;
+            this.btn_lamMoi.Location = new System.Drawing.Point(18, 267);
+            this.btn_lamMoi.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_lamMoi.Name = "btn_lamMoi";
+            this.btn_lamMoi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_lamMoi.Size = new System.Drawing.Size(142, 43);
+            this.btn_lamMoi.TabIndex = 14;
+            this.btn_lamMoi.Text = "Làm mới";
+            this.btn_lamMoi.Click += new System.EventHandler(this.btn_lamMoi_Click);
             // 
             // textBox1
             // 
@@ -370,11 +384,11 @@
             this.tablePanel2.SetColumn(this.panelControl1, 1);
             this.panelControl1.Controls.Add(this.gc_bill_thucan);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(260, 5);
+            this.panelControl1.Location = new System.Drawing.Point(305, 5);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl1.Name = "panelControl1";
             this.tablePanel2.SetRow(this.panelControl1, 0);
-            this.panelControl1.Size = new System.Drawing.Size(1105, 344);
+            this.panelControl1.Size = new System.Drawing.Size(1060, 344);
             this.panelControl1.TabIndex = 4;
             // 
             // gc_bill_thucan
@@ -385,7 +399,7 @@
             this.gc_bill_thucan.MainView = this.gv_bill_thucan;
             this.gc_bill_thucan.Margin = new System.Windows.Forms.Padding(5);
             this.gc_bill_thucan.Name = "gc_bill_thucan";
-            this.gc_bill_thucan.Size = new System.Drawing.Size(1101, 340);
+            this.gc_bill_thucan.Size = new System.Drawing.Size(1056, 340);
             this.gc_bill_thucan.TabIndex = 6;
             this.gc_bill_thucan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_bill_thucan});
@@ -568,5 +582,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraEditors.SimpleButton btn_lamMoi;
     }
 }

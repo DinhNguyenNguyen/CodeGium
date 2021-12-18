@@ -56,6 +56,7 @@ namespace QuanLyThucAn.From
         }
         void load_PhieuBan()
         {
+            gridColumn5.Visible = false;
             gc_phieuban.DataSource = conn.ex_data("SELECT p.id_PhieuBan , k.TenKhachHang , p.ThanhTien , p.NgayLapPhieu , t.id_taikhoan as 'NguoiLapPhieu' FROM phieuban p , khachhang k , taikhoan t where k.id_KhachHang = p.id_KhachHang and t.id_taikhoan = p.id_TaiKhoan");
         }
         DataTable dt;
@@ -145,34 +146,45 @@ namespace QuanLyThucAn.From
                     string madaoAn = dr["MaMonAn"].ToString(),
                            soluong = dr["SoLuong"].ToString(),
                            thanhtien = dr["ThanhTien"].ToString();
+                    conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
                     try
                     {
                         conn.ex_cmd(string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong));
                         //textEdit1.Text += string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong);
-
-
                     }
                     catch(Exception) { }
                 }
               //  XtraMessageBox.Show(lkkh.EditValue.ToString());
-                conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
+              
                 
                 if(XtraMessageBox.Show("Lập phiêu thành công\nBạn có muốn in phiếu không ?","Hệ thống",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    set_sys.mess("In cc có lm cái report đâu in , in vô cl à =)");
-                }
-                load_PhieuBan();
-                loadLKKH();
-                gc_ttphieuban.DataSource = null;
-                gc_bill_thucan.DataSource = null;
+                    var print = new QuanLyThucAn.Console.InHoaDon();
+                    print.cre_print(id);
+                    print.ShowDialog();
+                }             
             }
+            loadhet();
         }
 
         private void gv_phieuban_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             load_TTPhieuBan(gv_phieuban.GetRowCellDisplayText(e.RowHandle, "id_PhieuBan"));
         }
-      
+        void loadhet()
+        {
+            loadLKKH();
+            load_PhieuBan();
+            load_TTPhieuBan("empty");
+            lb_thanhtien.Text = "";
+            list_doAn.Clear();
+            gc_bill_thucan.DataSource = "";
+
+        }
+        private void btn_lamMoi_Click(object sender, EventArgs e)
+        {
+            loadhet();
+        }
     }
     
 }
