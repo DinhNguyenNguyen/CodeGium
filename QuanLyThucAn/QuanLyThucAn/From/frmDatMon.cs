@@ -139,6 +139,8 @@ namespace QuanLyThucAn.From
             else
             {
                 string id = conn.creatId("TM", "select * from ttpb");
+                conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
+
                 foreach (DataRow dr in dtOrther.Rows)
                 {
                    // conn.creatId();
@@ -146,7 +148,7 @@ namespace QuanLyThucAn.From
                     string madaoAn = dr["MaMonAn"].ToString(),
                            soluong = dr["SoLuong"].ToString(),
                            thanhtien = dr["ThanhTien"].ToString();
-                    conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
+                    //conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
                     try
                     {
                         conn.ex_cmd(string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong));
