@@ -263,13 +263,16 @@ namespace QuanLyThucAn.From
             txtNgaySinh.EditValue = "";
             txtSDT.EditValue = "";
             lkChucVU.Text = "";
+            txtMatKhau.Enabled = true;
+        
         }
 
         private void gvTaiKhoan_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             txtMaTk.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "id_taikhoan").ToString();
             txtTenTK.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "user_name").ToString();
-            txtMatKhau.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "password").ToString();
+            // txtMatKhau.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "password").ToString();
+            txtMatKhau.Enabled = false;
             txtHoTen.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "hovaten").ToString();
             txtSDT.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "sdt").ToString();
             lkChucVU.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "id_chucvu").ToString();
