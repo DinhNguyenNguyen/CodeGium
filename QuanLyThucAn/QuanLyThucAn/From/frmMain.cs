@@ -101,11 +101,37 @@ namespace QuanLyThucAn
             var frm = new FrmDoAn();
             act_frm(frm, frm.Text, frm.Name);
         }
+        connect conn = new connect();
 
         private void ace_quanlynhanvien_Click(object sender, EventArgs e)
-        {
+        { 
             var frm = new frmTaiKhoan_ChucVu();
+            if (conn.Quyen(QuanLyThucAn.From.frmLogin.mataikhoan))
+            {
+                act_frm(frm, frm.Text, frm.Name);
+            }
+            else
+            {
+                set_sys.mess("Bạn không có quyền try cập vào đây");
+            }
+          
+        }
+
+        private void ace_ThongKe_Click(object sender, EventArgs e)
+        {
+            var frm = new ThongKe();
             act_frm(frm,frm.Text,frm.Name);
+        }
+
+        private void acePhieuGoiMon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            var frm = new QuanLyThucAn.Console.DoiPassWord();
+            frm.ShowDialog();
         }
     }
 }

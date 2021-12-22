@@ -42,7 +42,7 @@ namespace QuanLyThucAn.From
             }
             foreach (DataRow dr in dt.Rows)
             {
-                dr["URL"] = string.Format(@"{0}\SRC\Img\{1}", Application.StartupPath,dr["URL"]);
+                dr["URL"] = string.Format(@"{0}\SRC\Img\{1}", Application.StartupPath, dr["URL"]);
                 Image img = Image.FromFile(dr["URL"].ToString());
                 dr["URLL"] = imageToByteArray(img);
                 dt.AcceptChanges();
@@ -71,6 +71,7 @@ namespace QuanLyThucAn.From
 
         private void frmLoaiTA_ThucAn_Load(object sender, EventArgs e)
         {
+          
             LoadLoaiTA();
             LoadThucAn();
             LoadLoaiTAonTA();
@@ -106,16 +107,17 @@ namespace QuanLyThucAn.From
                 return;
             }
             string sqlD = string.Format("update  loaidoan set tenloaithucan='{0}' where id_loaithucan='{1}'",txtTenLoai.EditValue.ToString(), txtMaLoai.EditValue.ToString());
-            if (conn.E_DaTa(sqlD))
-            {
-                XtraMessageBox.Show("Cập nhật loại thức ăn " + txtTenLoai.EditValue.ToString() + " thành công", "Thông báo");
-                LoadLoaiTA();
-                btnLamMoiL.PerformClick();
-            }
-            else
-            {
-                XtraMessageBox.Show("Cập nhật loại thức ăn " + txtTenLoai.EditValue.ToString() + " thất bại", "Thông báo");
-            }
+           
+                if (conn.E_DaTa(sqlD))
+                {
+                    XtraMessageBox.Show("Cập nhật loại thức ăn " + txtTenLoai.EditValue.ToString() + " thành công", "Thông báo");
+                    LoadLoaiTA();
+                    btnLamMoiL.PerformClick();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Cập nhật loại thức ăn " + txtTenLoai.EditValue.ToString() + " thất bại", "Thông báo");
+                }
         }
 
         private void btnXoaL_Click(object sender, EventArgs e)
@@ -126,15 +128,18 @@ namespace QuanLyThucAn.From
                 return;
             }
             string sqlD = string.Format("delete from loaidoan where id_loaithucan='{0}'", txtMaLoai.EditValue.ToString());
-            if (conn.E_DaTa(sqlD))
+            if (set_sys.accept("Loại thức ăn") == true)
             {
-                XtraMessageBox.Show("Xoá loại thức ăn " + txtTenLoai.EditValue.ToString() + " thành công", "Thông báo");
-                LoadLoaiTA();
-            }
-            else
-            {
-                XtraMessageBox.Show("Xoá loại thức ăn " + txtTenLoai.EditValue.ToString() + " thất bại", "Thông báo");
-            }
+                if (conn.E_DaTa(sqlD))
+                {
+                    XtraMessageBox.Show("Xoá loại thức ăn " + txtTenLoai.EditValue.ToString() + " thành công", "Thông báo");
+                    LoadLoaiTA();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Xoá loại thức ăn " + txtTenLoai.EditValue.ToString() + " thất bại", "Thông báo");
+                }
+            }  
         }
 
         private void btnLamMoiL_Click(object sender, EventArgs e)
@@ -162,6 +167,7 @@ namespace QuanLyThucAn.From
             lukLoaiTA.EditValue = "";
             txtTenTA.Focus();
             LoadLoaiTAonTA();
+            LoadThucAn();
         }
 
         private void btnSuaF_Click(object sender, EventArgs e)
@@ -195,15 +201,20 @@ namespace QuanLyThucAn.From
                 return;
             }
             string sqlD = string.Format("delete from doan where id_ThucAn='{0}'", txtMaTA.EditValue.ToString());
-            if (conn.E_DaTa(sqlD))
+            if(set_sys.accept("Thức ăn"))
             {
-                XtraMessageBox.Show("Xoá  thức ăn " + txtMaTA.EditValue.ToString() + " thành công", "Thông báo");
-                LoadLoaiTA();
+                if (conn.E_DaTa(sqlD))
+                {
+                    XtraMessageBox.Show("Xoá  thức ăn " + txtMaTA.EditValue.ToString() + " thành công", "Thông báo");
+                    LoadLoaiTA();
+                    LoadThucAn();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Xoá loại thức ăn " + txtMaTA.EditValue.ToString() + " thất bại", "Thông báo");
+                }
             }
-            else
-            {
-                XtraMessageBox.Show("Xoá loại thức ăn " + txtMaTA.EditValue.ToString() + " thất bại", "Thông báo");
-            }
+          
         }
 
         private void btnThemF_Click(object sender, EventArgs e)
@@ -256,6 +267,7 @@ namespace QuanLyThucAn.From
             txtMaTA.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "id_ThucAn");
             txtTenTA.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "TenThucAn");
             txtURL.EditValue = gvThucAn.GetRowCellValue(e.RowHandle, "URL");
+            txtURL.Text = txtURL.Text.Substring(txtURL.Text.IndexOf("Img")+4);
             lukLoaiTA.Text = gvThucAn.GetRowCellValue(e.RowHandle, "id_LoaiThucAn").ToString();
         }
         string path;

@@ -138,27 +138,19 @@ namespace QuanLyThucAn.From
             }
             else
             {
-                string id = conn.creatId("TM", "select * from ttpb");
+                string id = conn.creatId("TM", "select * from phieuban");
                 conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
-
                 foreach (DataRow dr in dtOrther.Rows)
                 {
-                   // conn.creatId();
-
                     string madaoAn = dr["MaMonAn"].ToString(),
                            soluong = dr["SoLuong"].ToString(),
                            thanhtien = dr["ThanhTien"].ToString();
-                    //conn.ex_cmd(string.Format("insert into phieuban values('{0}','{1}','{2}',{3},'{4}')", id, lkkh.EditValue, frmLogin.mataikhoan, lb_thanhtien.Text, DateTime.Now.ToString("yyyy/MM/dd")));
                     try
                     {
                         conn.ex_cmd(string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong));
-                        //textEdit1.Text += string.Format("insert into ttpb values('{0}','{1}',{2})", id, madaoAn, soluong);
                     }
                     catch(Exception) { }
                 }
-              //  XtraMessageBox.Show(lkkh.EditValue.ToString());
-              
-                
                 if(XtraMessageBox.Show("Lập phiêu thành công\nBạn có muốn in phiếu không ?","Hệ thống",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var print = new QuanLyThucAn.Console.InHoaDon();
@@ -166,6 +158,7 @@ namespace QuanLyThucAn.From
                     print.ShowDialog();
                 }             
             }
+
             loadhet();
         }
 
@@ -180,7 +173,10 @@ namespace QuanLyThucAn.From
             load_TTPhieuBan("empty");
             lb_thanhtien.Text = "";
             list_doAn.Clear();
+            dtOrther.Clear();
+            lb_thanhtien.Text = "";
             gc_bill_thucan.DataSource = "";
+            thanhtien = 0;
 
         }
         private void btn_lamMoi_Click(object sender, EventArgs e)

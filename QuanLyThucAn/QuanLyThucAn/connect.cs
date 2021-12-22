@@ -17,8 +17,10 @@ namespace QuanLyThucAn
     {
         public MySqlConnection connect_db()
         {
+            string conn1 = "Server=26.9.216.208;Database=db_NhaHang;User Id=admin;password=", conn2 = "Server=localhost;Database=db_NhaHang;User Id=admin;password=", conn;
+            conn = conn1;
             MySqlConnection conn_term = new MySqlConnection(
-             "Server=26.9.216.208;Database=db_NhaHang;User Id=admin;password=");
+           conn);
             return conn_term;
         }
         MySqlCommand cmd;
@@ -219,6 +221,10 @@ namespace QuanLyThucAn
         public void ThongBaoTB(string chuoi, TextEdit text)
         {
             XtraMessageBox.Show(chuoi + text.EditValue.ToString() + " thất bại", "Thông báo");
+        }
+        public bool Quyen(string id)
+        {
+            return ( ex_data_string(string.Format("select count(*) from chucvu cv , taikhoan tk where  cv.id_chucvu = tk.id_chucvu and tk.id_taikhoan = '{0}' and cv.tenchucvu = 'Quản trị'", id)) != "0") ? true : false;
         }
     }
 }

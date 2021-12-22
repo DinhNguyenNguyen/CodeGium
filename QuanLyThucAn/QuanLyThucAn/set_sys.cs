@@ -14,5 +14,9 @@ namespace QuanLyThucAn
         {
             XtraMessageBox.Show(text, "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public static bool accept(string mess)
+        {
+            return (XtraMessageBox.Show(string.Format("Bạn có chắc chắn xoá '{0}' không ?", mess), "Hệ thống", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ? true : false;
+        }
     }
 }

@@ -375,6 +375,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_KhachHang", "Mã khách hàng"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenKhachHang", "Tên khách hàng")});
             this.lkkh.Properties.DisplayMember = "TenKhachHang";
+            this.lkkh.Properties.NullText = "Chọn khách hàng";
             this.lkkh.Properties.ValueMember = "id_KhachHang";
             this.lkkh.Size = new System.Drawing.Size(238, 34);
             this.lkkh.TabIndex = 6;
