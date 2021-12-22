@@ -26,9 +26,19 @@ namespace QuanLyThucAn.From
         private void loadTK()
         {
             DataTable dt = conn.ex_data(taikhoan);
-            if(dt!= null)
+            dt.Columns.Add("tenchucvu",typeof(String));
+            gridColumn1.Visible = false;
+            gridColumn2.Visible = false;
+            if (dt!= null)
             {
+                foreach(DataRow dr in dt.Rows)
+                {
+                    dr["tenchucvu"] = conn.ex_data_string(string.Format("select tenchucvu from chucvu where id_chucvu = '{0}'", dr["id_chucvu"]));
+                    dr.AcceptChanges();
+                    dt.AcceptChanges();
+                }
                 gcTaiKhoan.DataSource = dt;
+
             }
         }
 
@@ -52,6 +62,7 @@ namespace QuanLyThucAn.From
         private void loadCVonTK()
         {
             DataTable dt = conn.ex_data(chucvu);
+            gridColumn9.Visible = false;
             if (dt != null)
             {
                 lkChucVU.Properties.DataSource = dt;
@@ -112,15 +123,18 @@ namespace QuanLyThucAn.From
                 txtTenCV.Focus();
                 return;
             }
-            string sqlDCV = string.Format("delete from chucvu where id_chucvu='{0}'",txtMaCV.EditValue.ToString());
-            if (conn.E_DaTa(sqlDCV))
+            string sqlDCV = string.Format("delete from chucvu where id_chucvu='{0}'", txtMaCV.EditValue.ToString());
+            if (set_sys.accept("chức vụ "))
             {
-                XtraMessageBox.Show("Xoá chức vụ " + txtTenCV.EditValue.ToString() + " thành công", "Thông báo");
-                loadCV(); btnLamMoiCV.PerformClick();
-            }
-            else
-            {
-                XtraMessageBox.Show("Xoá chức vụ " + txtTenCV.EditValue.ToString() + " thất bại", "Thông báo");
+                if (conn.E_DaTa(sqlDCV))
+                {
+                    XtraMessageBox.Show("Xoá chức vụ " + txtTenCV.EditValue.ToString() + " thành công", "Thông báo");
+                    loadCV(); btnLamMoiCV.PerformClick();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Xoá chức vụ " + txtTenCV.EditValue.ToString() + " thất bại", "Thông báo");
+                }
             }
         }
 
@@ -139,10 +153,10 @@ namespace QuanLyThucAn.From
 
         #endregion
 
-
         #region Tài khoản
         private void btnThem_Click(object sender, EventArgs e)
         {
+            #region Cập nhật check
             if (txtTenTK.EditValue== null || txtTenTK.EditValue.ToString().Equals(""))
             {
                 XtraMessageBox.Show("Bạn chưa nhập tên tài khoản\r\nVui lòng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -190,42 +204,43 @@ namespace QuanLyThucAn.From
                 txtEmail.Focus();
                 return;
             }
-            
+            #endregion
 
-            string sqlU = string.Format("insert taikhoan values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",conn.creatId("TK",taikhoan),lkChucVU.EditValue.ToString() , txtTenTK.EditValue.ToString(),conn.CreateMD5(txtMatKhau.EditValue.ToString()), txtHoTen.EditValue.ToString(),txtSDT.EditValue.ToString(), txtEmail.EditValue.ToString(), Convert.ToDateTime(txtNgaySinh.EditValue.ToString()).ToString("yyyy-MM-dd"));
-            
+            string sqlU = string.Format("insert taikhoan values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','')",conn.creatId("TK",taikhoan),lkChucVU.EditValue.ToString() , txtTenTK.EditValue.ToString(),conn.CreateMD5(txtMatKhau.EditValue.ToString()), txtHoTen.EditValue.ToString(),txtSDT.EditValue.ToString(), txtEmail.EditValue.ToString(), Convert.ToDateTime(txtNgaySinh.EditValue.ToString()).ToString("yyyy-MM-dd"));
             if (conn.E_DaTa(sqlU))
             {
-                conn.ThongBaoTC("Thêm thức ăn ", txtHoTen);
+                conn.ThongBaoTC("Thêm tài khoản ", txtHoTen);
                 loadTK();
                 btnLamMoi.PerformClick();
             }
             else
             {
-                conn.ThongBaoTB("Thêm thức ăn ", txtHoTen);
+                conn.ThongBaoTB("Thêm tài khoản ", txtHoTen);
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sqlU = string.Format("delete from taikhoan where id_taikhoan= '{0}' ", txtMaTk.EditValue.ToString());
-            
-            if (conn.E_DaTa(sqlU))
+            if (set_sys.accept("tài khoản "))
             {
-                conn.ThongBaoTC("Xoá tài khoản cho ", txtHoTen);
-                loadTK();
-                btnLamMoi.PerformClick();
-            }
-            else
-            {
-                conn.ThongBaoTB("Xoá tài khoản cho ", txtHoTen);
+                if (conn.E_DaTa(sqlU))
+                {
+                    conn.ThongBaoTC("Xoá tài khoản cho ", txtHoTen);
+                    loadTK();
+                    btnLamMoi.PerformClick();
+                }
+                else
+                {
+                    conn.ThongBaoTB("Xoá tài khoản cho ", txtHoTen);
+                }
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string sqlU = string.Format("update taikhoan set id_chucvu='{0}', password= '{1}', hovaten= '{2}' sdt= '{3}',email= '{4}',ngaysinh= '{5}' where id_taikhoan='{6}')", lkChucVU.EditValue.ToString(), conn.CreateMD5(txtMatKhau.EditValue.ToString()), txtHoTen.EditValue.ToString(), txtSDT.EditValue.ToString(), txtEmail.EditValue.ToString(), Convert.ToDateTime(txtNgaySinh.EditValue.ToString()).ToString("yyyy-MM-dd"), txtMaTk.EditValue.ToString());
-
+            string sqlU = string.Format("update taikhoan set id_chucvu='{0}', password= '{1}', hovaten= '{2}', sdt= '{3}',email= '{4}',ngaysinh= '{5}' where id_taikhoan='{6}'", lkChucVU.EditValue.ToString(), conn.CreateMD5(txtMatKhau.EditValue.ToString()), txtHoTen.EditValue.ToString(), txtSDT.EditValue.ToString(), txtEmail.EditValue.ToString(), Convert.ToDateTime(txtNgaySinh.EditValue.ToString()).ToString("yyyy-MM-dd"), txtMaTk.EditValue.ToString());
+            txtEmail.Text = sqlU;
             if (conn.E_DaTa(sqlU))
             {
                 conn.ThongBaoTC("Sửa tài khoản cho ", txtHoTen);
@@ -261,7 +276,6 @@ namespace QuanLyThucAn.From
             txtNgaySinh.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "ngaysinh").ToString();
             txtEmail.EditValue = gvTaiKhoan.GetRowCellValue(e.RowHandle, "email").ToString();
         }
-
         #endregion
     }
 }

@@ -43,7 +43,6 @@
             this.aceChucNang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aecDatMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceXemMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.acePhieuGoiMon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -81,16 +80,19 @@
             // 
             // ace_quanlynhanvien
             // 
+            this.ace_quanlynhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_quanlynhanvien.ImageOptions.Image")));
             this.ace_quanlynhanvien.Name = "ace_quanlynhanvien";
             this.ace_quanlynhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_quanlynhanvien.Text = "Quản lý nhân viên";
+            this.ace_quanlynhanvien.Text = "QL nhân viên và chức vụ";
             this.ace_quanlynhanvien.Click += new System.EventHandler(this.ace_quanlynhanvien_Click);
             // 
             // ace_ThongKe
             // 
+            this.ace_ThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_ThongKe.ImageOptions.Image")));
             this.ace_ThongKe.Name = "ace_ThongKe";
             this.ace_ThongKe.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_ThongKe.Text = "Thống kê";
+            this.ace_ThongKe.Click += new System.EventHandler(this.ace_ThongKe_Click);
             // 
             // aceDangXuat
             // 
@@ -129,8 +131,7 @@
             // 
             this.aceChucNang.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.aecDatMon,
-            this.aceXemMon,
-            this.acePhieuGoiMon});
+            this.aceXemMon});
             this.aceChucNang.Expanded = true;
             this.aceChucNang.Name = "aceChucNang";
             this.aceChucNang.Text = "Chức năng";
@@ -150,13 +151,6 @@
             this.aceXemMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceXemMon.Text = "Xem món";
             this.aceXemMon.Click += new System.EventHandler(this.aceXemMon_Click);
-            // 
-            // acePhieuGoiMon
-            // 
-            this.acePhieuGoiMon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("acePhieuGoiMon.ImageOptions.Image")));
-            this.acePhieuGoiMon.Name = "acePhieuGoiMon";
-            this.acePhieuGoiMon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.acePhieuGoiMon.Text = "Phiếu gọi món";
             // 
             // accordionControl1
             // 
@@ -207,7 +201,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceChucNang;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aecDatMon;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceXemMon;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement acePhieuGoiMon;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceHeThong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceKhachHang;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceMonAn;

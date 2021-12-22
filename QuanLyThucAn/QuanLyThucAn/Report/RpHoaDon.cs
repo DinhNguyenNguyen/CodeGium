@@ -4,6 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QuanLyThucAn.Report
 {
@@ -22,6 +23,7 @@ namespace QuanLyThucAn.Report
                 " FROM phieuban pb , ttpb , doan , khachhang kh , taikhoan tk WHERE pb.id_PhieuBan = ttpb.id_TTPB and "+
                 "doan.id_ThucAn = ttpb.id_DoAn and pb.id_KhachHang = kh.id_KhachHang and pb.id_TaiKhoan = tk.id_taikhoan "+
                 "and pb.id_PhieuBan = '{0}'",id_hoadon));
+            
             BeginInit();
             int i = 0;
             lb_ma.Text += id_hoadon;
@@ -30,7 +32,7 @@ namespace QuanLyThucAn.Report
 
             foreach (DataRow dr in dt.Rows)
             {
-                if (i == 1)
+                if (i == 0)
                 {
                     xrCell_MaHoaDon = new XRTableCell();
                     cellTenSp = new XRTableCell();
