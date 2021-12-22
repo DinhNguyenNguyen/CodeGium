@@ -17,8 +17,10 @@ namespace QuanLyThucAn
     {
         public MySqlConnection connect_db()
         {
+            string conn1 = "Server=26.9.216.208;Database=db_NhaHang;User Id=admin;password=", conn2 = "Server=localhost;Database=db_NhaHang;User Id=admin;password=", conn;
+            conn = conn1;
             MySqlConnection conn_term = new MySqlConnection(
-             "Server=26.9.216.208;Database=db_NhaHang;User Id=admin;password=");
+           conn);
             return conn_term;
         }
         MySqlCommand cmd;
