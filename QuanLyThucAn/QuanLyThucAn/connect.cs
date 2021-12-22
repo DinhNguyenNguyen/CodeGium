@@ -220,9 +220,9 @@ namespace QuanLyThucAn
         {
             XtraMessageBox.Show(chuoi + text.EditValue.ToString() + " thất bại", "Thông báo");
         }
-       /* public bool Quyen(string id)
+        public bool Quyen(string id)
         {
-return (ex_data_string(string.Format("select tenchucvu from chucvu cv , taikhoan tk where tk.id_taikhoan = '{0}' and tk.id_chucvu = 'Quản trị' ")))
-        }*/
+            return ( ex_data_string(string.Format("select count(*) from chucvu cv , taikhoan tk where  cv.id_chucvu = tk.id_chucvu and tk.id_taikhoan = '{0}' and cv.tenchucvu = 'Quản trị'", id)) != "0") ? true : false;
+        }
     }
 }

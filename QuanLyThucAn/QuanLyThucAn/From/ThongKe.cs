@@ -18,12 +18,13 @@ namespace QuanLyThucAn.From
             InitializeComponent();
         }
         connect conn = new connect();
+        ChartControl chartControl1;
         void load_thongke()
         {
             pnThongKe.Controls.Clear();
-            ChartControl chartControl1 = new ChartControl();
-           
-                Series Series1 = new Series("Thức ăn", ViewType.Line);
+            chartControl1 = new ChartControl();
+
+            Series Series1 = new Series("Thức ăn", ViewType.Line);
                 Series Series2 = new Series("Phiếu bán", ViewType.Line);
                 Series Series3 = new Series("Tiền", ViewType.Line);
             int count_sl = 0,count_money = 0,count_phieu = 0,i =0;
@@ -33,7 +34,8 @@ namespace QuanLyThucAn.From
             Series1.Points.Add(new SeriesPoint(i, int.Parse(cmd1)));
             Series2.Points.Add(new SeriesPoint(i, int.Parse(cmd2)));
             Series3.Points.Add(new SeriesPoint(i, int.Parse(cmd3)));
-            foreach (DataRow dr in conn.ex_data(string.Format("SELECT * FROM ttpb , phieuban pb where pb.id_PhieuBan = ttpb.id_TTPB and pb.NgayLapPhieu = '{0}'",DateTime.Now.ToString("yyyy-MM-dd"))).Rows)
+         
+            foreach (DataRow dr in conn.ex_data(string.Format("SELECT * FROM ttpb , phieuban pb where pb.id_PhieuBan = ttpb.id_TTPB and pb.NgayLapPhieu >= '{0}'",DateTime.Now.ToString("yyyy-MM-dd"))).Rows)
             {
                 i++;
                 count_sl += int.Parse(dr["soluong"].ToString());
@@ -70,11 +72,18 @@ namespace QuanLyThucAn.From
             // Add the chart to the form.
             chartControl1.Dock = DockStyle.Fill;
             pnThongKe.Controls.Add(chartControl1);
+           
         }
 
         private void ThongKe_Load(object sender, EventArgs e)
         {
             load_thongke();
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            chartControl1.ShowPrintPreview();
+
         }
     }
 }

@@ -841,3 +841,5 @@ D:\DA2\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csproj.CoreComp
 D:\DA2\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.csproj.CopyComplete
 D:\DA2\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.exe
 D:\DA2\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.pdb
+D:\DA2\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.Console.DoiPassWord.resources
+D:\DA2\CodeGium\QuanLyThucAn\QuanLyThucAn\obj\Debug\QuanLyThucAn.From.FrmTaiKhoan.resources

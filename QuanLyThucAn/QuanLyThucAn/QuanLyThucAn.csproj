@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connect.cs" />
+    <Compile Include="Console\DoiPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Console\DoiPassWord.Designer.cs">
+      <DependentUpon>DoiPassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Console\InHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     <Compile Include="From\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="From\FrmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmTaiKhoan.Designer.cs">
+      <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\frmTaiKhoan_ChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,9 @@
     <Content Include="SRC\Img\Trash.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Console\DoiPassWord.resx">
+      <DependentUpon>DoiPassWord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Console\InHoaDon.resx">
       <DependentUpon>InHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmTaiKhoan.resx">
+      <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\frmTaiKhoan_ChucVu.resx">
       <DependentUpon>frmTaiKhoan_ChucVu.cs</DependentUpon>
